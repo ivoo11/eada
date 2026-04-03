@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Campaña Voto Digital - Espacio Abierto</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favico.png" rel="icon">
+
+  <!-- Fuentes y librerías -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #333;
+      -webkit-user-select: none; 
+      -ms-user-select: none;    
+      user-select: none;        
+    }
+
+    /* HERO */
+    #hero {
+      background: url('assets/img/votofondo.png') center/cover no-repeat;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+    #hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(50, 0, 70, 0.6);
+    }
+
+        #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35); /* transparencia */
+      z-index: 1;
+    }
+    #hero .content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      animation: fadeInUp 1.5s ease;
+    }
+    #hero h1 {
+      font-size: 6rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    #hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    #hero .btn {
+      background: #6a1b9a;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    #hero .btn:hover {
+      background: #8a2abf;
+      transform: scale(1.05);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECCIÓN POR QUÉ */
+    .why {
+      padding: 100px 0;
+      background: #5c2569;
+    }
+    .why h2 {
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .why h5 {
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+    }
+
+    .why p {
+      padding-top: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .icon-box {
+      text-align: center;
+      transition: transform .4s ease;
+    }
+    .icon-box:hover { transform: translateY(-10px); }
+    .icon-bg {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #763584;
+      font-size: 50px;
+      box-shadow: 0 4px 15px rgba(106,27,154,.3);
+      transition: all .3s ease;
+    }
+    .icon-box:hover .icon-bg {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 6px 20px rgba(106,27,154,.4);
+    }
+
+/* GRÁFICO */
+.grafico {
+  background: #6a1b9a; /* fondo violeta institucional */
+  padding: 120px 0;
+  text-align: center;
+  color: #fff; /* texto blanco */
+}
+
+.grafico h2 {
+  font-weight: 800;
+  color: #fff;
+}
+
+.grafico p {
+    color: #fff;
+}
+
+.chart-wrapper {
+  width: 90%;
+  max-width: 1600px;
+  margin: 60px auto;
+  height: 600px;
+}
+
+
+    /* TESTIMONIOS */
+    .testimonios {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .testimonios h2 {
+      text-align: center;
+      color: #6a1b9a;
+      font-weight: 800;
+      margin-bottom: 40px;
+      text-wrap: balance;
+    }
+
+    @media (max-width: 575.98px){
+      .testimonios{
+        padding: 70px 0;
+      }
+      .testimonios h2{
+        font-size: clamp(22px, 7vw, 30px);
+        padding: 0 14px;
+        margin-bottom: 22px;
+        line-height: 1.15;
+      }
+    }
+    .referente-card {
+      background: #fff;
+      border: 5px solid #6a1b9a;
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(106,27,154,0.1);
+      transition: transform .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      align-items: center;
+    }
+    .referente-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(106,27,154,0.2);
+    }
+    .referente-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #6a1b9a;
+      margin-bottom: 25px;
+      align-self: center;
+    }
+    .referente-card p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .referente-card h6 {
+      font-weight: 600;
+      color: #6a1b9a;
+    }
+
+/* SWIPER */
+
+.swiper-wrapper{
+  align-items: stretch;
+}
+
+.swiper {
+  position: relative;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  height: auto;        
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Flechas */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6a1b9a;
+  width: 45px;
+  height: 45px;
+  border: 5px solid #6a1b9a;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(106,27,154,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #6a1b9a;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Posición fuera del carrusel (sin tocar cards) */
+.swiper-button-prev {
+  left: -30px;
+}
+.swiper-button-next {
+  right: -30px;
+}
+
+/* Centrado vertical */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #6a1b9a;
+}
+
+@media (max-width: 767.98px){
+  .swiper-button-next,
+  .swiper-button-prev{
+    display: none !important;
+  }
+}
+
+    /* CTA FINAL */
+    .cta {
+      background: #410864;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .cta h3 {
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      word-break: break-word;
+      max-width: 16ch;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 800;
+    }
+    .cta p {
+      font-size: 1.3rem;
+    }
+    .cta a {
+      margin-top: 20px;
+      display: inline-block;
+      background: white;
+      color: #6a1b9a;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta a:hover {
+      color: #fff;
+      background: #8a2abf;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      #hero h1 { font-size: 2rem; }
+      #hero p { font-size: 1rem; }
+    }
+
+/* FOOTER */
+    footer {
+      background: #fff;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+    footer h5 {
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #410864;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+    .social-icons a {
+      color: #410864;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #8a2abf;
+      transform: scale(1.15);
+    }
+
+    @media (max-width: 768px) {
+      #hero h1 { font-size: 2rem; }
+      #hero p { font-size: 1rem; }
+    }
+
+  /* ============================
+   APPLE-LIKE SCROLL QUOTES
+============================ */
+:root{
+  --eada-purple: #763584;
+}
+
+.aq{
+  position: relative;
+  height: 360vh;          /* 4 frases: espacio cómodo */
+  background: #fff;
+}
+
+.aq__sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;    /* CENTRADO PERFECTO */
+}
+
+.aq__wrap{
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;    /* CENTRADO PERFECTO */
+  text-align: center;
+  padding: 0 16px;
+}
+
+.aq__line{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  color: var(--eada-purple);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  font-size: clamp(44px, 6.2vw, 84px);
+  text-wrap: balance;
+
+  /* estado "off" */
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(10px);
+  transition:
+    opacity .45s ease,
+    transform .65s cubic-bezier(.2,.8,.2,1),
+    filter .65s ease;
+}
+
+.aq--active{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Barrita */
+.aq__progress{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(18px, 4vh, 36px);
+  width: min(520px, 86vw);
+  height: 6px;
+  background: rgba(118,53,132,.14);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.aq__bar{
+  display:block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #763584, #A46BB2);
+  border-radius: 999px;
+  transition: width .12s linear;
+}
+
+/* Mobile tweaks */
+@media (max-width: 767.98px){
+  .aq{ height: 380vh; } /* un poquito más de aire en mobile */
+  .aq__line{ font-size: clamp(38px, 9vw, 58px); }
+}
+
+/* ============================
+   MOBILE VERSION (SIN EFECTO)
+============================ */
+@media (max-width: 767.98px){
+
+  .aq{
+    height: auto; /* deja de ocupar 360vh */
+    padding: 80px 0;
+  }
+
+  .aq__sticky{
+    position: relative; /* ya no sticky */
+    height: auto;
+  }
+
+  .aq__wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .aq__line{
+    position: relative;  /* vuelve al flujo normal */
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    font-size: clamp(34px, 9vw, 52px);
+  }
+
+  .aq__progress{
+    display: none; /* ocultamos barra */
+  }
+
+}
+
+/* ================================
+   VOTO EN REDES
+================================ */
+
+.social-campaign{
+  padding: 100px 0;
+  background: #fff;
+}
+
+.social-campaign__header h2{
+  font-weight: 800;
+  color: #763584;
+  margin-bottom: 50px;
+}
+
+.social-campaign__header p{
+  color: #666;
+  margin-bottom: 60px;
+  font-weight: 500;
+}
+
+.social-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.social-card{
+  flex: 0 1 300px;
+  max-width: 320px;
+  width: 100%;
+
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  transition: all .35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.social-card__image{
+  overflow: hidden;
+}
+
+.social-card__image img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.social-card:hover img{
+  transform: scale(1.05);
+}
+
+.social-card__body{
+  padding: 20px;
+}
+
+.social-card__body h3{
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.social-card__platform{
+  font-size: 12px;
+  color: #763584;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================================
+   SHORTS CAMPAIGN
+================================ */
+
+.shorts-campaign{
+  padding: 100px 0;
+  background: #fff;
+}
+
+.shorts-campaign__header h2{
+  font-weight: 800;
+  color: #763584;
+  margin-bottom: 50px;
+}
+
+.shorts-campaign__header p{
+  color: #666;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+/* ✅ Flex para centrar última fila siempre */
+.shorts-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.short-card{
+  flex: 0 1 240px;
+  max-width: 260px;
+  width: 100%;
+  text-decoration: none;
+
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.short-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.12);
+}
+
+.short-thumb{
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: #111;
+}
+
+.short-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.short-play{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.short-play span{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(118,53,132,.92);
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(8px);
+}
+
+.short-body{
+  padding: 14px 14px 16px;
+}
+
+.short-title{
+  font-size: 13px;
+  font-weight: 650;
+  color: #111;
+  line-height: 1.25;
+  margin: 0 0 10px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.short-meta{
+  font-size: 12px;
+  font-weight: 700;
+  color: #763584;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Actions */
+.shorts-actions{
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.shorts-btn{
+  margin-top: 30px;
+  border: none;
+  background: #763584;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.shorts-btn:hover{
+  background: #8a2abf;
+}
+
+.shorts-btn--ghost{
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 575.98px){
+  .short-card{
+    flex: 0 1 46%;
+    max-width: 46%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto !important; }
+  .aq__line{ transition: none !important; }
+}
+
+/* SOLO MOBILE: arregla overflow horizontal del bloque appleQuotes */
+@media (max-width: 767.98px){
+
+  /* (A) Evita que el padding sume ancho */
+  #appleQuotes .aq__wrap{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* (B) Asegura que los textos no empujen el layout */
+  #appleQuotes .aq__line{
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 315px){
+  #appleQuotes .aq__line{
+    font-size: 26px;
+  }
+}
+
+.video-card{
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border: 1px solid rgba(118,53,132,.12);
+}
+
+.video-card__body{
+  padding: 14px 16px 16px;
+}
+
+.video-card__title{
+  margin: 0;
+  font-weight: 800;
+  color: #763584;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.video-card__meta{
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(0,0,0,.6);
+  font-weight: 600;
+}
+</style>
+
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+
+<section id="hero">
+  <div class="content">
+    <h1>Tu tiempo vale.<br>Tu voto también.</h1>
+    <p>Conocé cómo el voto digital transforma la participación y hace más ágil tu elección.</p>
+    <a href="#why" class="btn">¿Por qué Voto Digital?</a>
+  </div>
+</section>
+
+<section id="appleQuotes" class="aq">
+  <div class="aq__sticky">
+    <div class="aq__wrap">
+
+      <h2 class="aq__line aq--active">+INCLUSIVO</h2>
+      <h2 class="aq__line">+PRÁCTICO</h2>
+      <h2 class="aq__line">+DEMOCRÁTICO</h2>
+      <h2 class="aq__line">COLEGIO PÚBLICO DIGITAL</h2>
+
+      <div class="aq__progress" aria-hidden="true">
+        <span class="aq__bar" id="aqBar"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id= "why" class="why aos-init aos-animate" data-aos="fade-up">
+  <div class="container">
+    <h2>¿Por qué voto digital?</h2>
+    <div class="row">
+      <div class="col-md-4 icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-bg"><i class="bi bi-lightning-charge-fill"></i></div>
+        <h5>Rápido y accesible</h5>
+        <p>Votá desde donde estés, sin perder tiempo.</p>
+      </div>
+      <div class="col-md-4 icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-bg"><i class="bi bi-shield-lock-fill"></i></div>
+        <h5>Seguro</h5>
+        <p>Tu voto está protegido y encriptado digitalmente.</p>
+      </div>
+      <div class="col-md-4 icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-bg"><i class="bi bi-people-fill"></i></div>
+        <h5>Más participación</h5>
+        <p>Hacerlo más fácil, significa más colegas votando.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= REFERENTES OPINAN (SWIPER) ======= -->
+<section class="testimonios" data-aos="fade-up">
+  <div class="container">
+    <h2>Nuestros Referentes opinan</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="referente-card">
+            <img src="assets/img/vdigital/referente1.jpg" alt="Ref1">
+            <p>“Todo el sistema judicial se digitalizó hace años. El Colegio gasta millones en informática y puede garantizar que votemos de manera digital. Recursos hay de sobra. Lo que falta es decisión”</p>
+            <h6>– Dr. Sebastián Saez</h6>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="referente-card">
+            <img src="assets/img/vdigital/referente2.jpg" alt="Ref2">
+            <p>“El sistema actual premia a los aparatos partidarios, que mueven gente a votar, no al que trabaja todo el día. El voto digital cambia las reglas y devuelve el poder a la abogacía.”</p>
+            <h6>– Dr. Rubén Ramos</h6>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="referente-card">
+            <img src="assets/img/vdigital/referente3.jpg" alt="Ref3">
+            <p>“Muchas abogadas somos madres o tenemos personas a cargo, por lo cual debemos organizarnos como podemos para trabajar y cuidar. El voto digital es una cuestión de igualdad.”</p>
+            <h6>– Dra. Fabiana Sosa</h6>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="referente-card">
+            <img src="assets/img/vdigital/referente4.jpg" alt="Ref4">
+            <p>“No puede ser que para votar en el Colegio haya que pedirse el día o cerrar el estudio. Para los que vivimos en Provincia muchas veces es imposible ir al centro. Estamos en 2026 y votamos como en 1900”</p>
+            <h6>– Dr. Fernando G. Pouso</h6>
+          </div>
+        </div>
+
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente5.jpg"  alt="Ref5"><p>“El voto digital garantiza igualdad y transparencia, genera las mismas posibilidades de votar, sin importan las distancias, las condiciones físicas ni las condiciones de empleo.”</p><h6>– Dra. M. Angélica Lobo</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente6.jpg"  alt="Ref6"><p>“Para los que trabajamos en organismos públicos conseguir permiso para ir a votar no siempre es posible, y eso nos deja afuera de una decisión que nos afecta a todos.”</p><h6>– Dr. Martín Chiappetta</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente7.jpg"  alt="Ref7"><p>“Las abogadas jóvenes somos quienes más usamos la tecnología, pero somos también las que menos llegamos a votar. Se hace dificil ir un martes a la tarde con nuestras obligaciones.”</p><h6>– Dra. Valeria Ayala</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente8.jpg"  alt="Ref8"><p>“No todos los colegas pueden cerrar el estudio para ir a votar. El voto digital es una cuestión de sentido común y de época, la General Paz no puedee seguir separando a la abogacía.”</p><h6>– Dr. Julio Nuñez</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente9.jpg"  alt="Ref9"><p>“Hablar de voto digital es hablar de inclusión. Hay que resolverle cuestiones esenciales a colegas con discapacidades, hacerlos parte de algo tan importante como el voto es clave.”</p><h6>– Dra. Natalia González</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente10.jpg" alt="Ref10"><p>“No puede ser que el futuro de la abogacía quede siempre en manos de aparatos partidarios que movilizan gente. El voto digital permite votar desde cualquier lugar sin condiciones.”</p><h6>– Dr. Claudio Heredia</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente11.jpg" alt="Ref11"><p>“Los abogados jóvenes queremos participar, queremos aportar otras miradas, pero el sistema actual desalienta. Si se litiga digitalmente, lo lógico es que el voto también lo sea.”</p><h6>– Dr. Ignacio Pardo</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente12.jpg" alt="Ref12"><p>“Las tareas de cuidado recaen mayormente en las mujeres, y eso también nos condiciona mucho a la hora de votar. Ir al colegio implica dejar cosas que a veces no se pueden dejar.”</p><h6>– Dra. Ayelén Caffarena</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente13.jpg" alt="Ref13"><p>“La mitad de los matriculados vive o trabaja en la Provincia. Sabemos lo que significa cruzar la General Paz un día de semana para ir al Centro, El voto digital integra a toda la abogacía por igual.”</p><h6>– Dr. Nicolás Fasan</h6></div></div>
+        <div class="swiper-slide"><div class="referente-card"><img src="assets/img/vdigital/referente14.jpg" alt="Ref14"><p>“En 2026 la abogacía necesita un cambio profundo. Pensar y desarrollar un Colegio Público Digital es parte de ese camino hacia el futuro, y el voto digital la herramienta ideal para democratizar.”</p><h6>– Dr. Alexis Kalczynski</h6></div></div>
+
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="grafico aos-init aos-animate" id="grafico" data-aos="fade-up">
+  <h2>Participación en las elecciones</h2>
+  <p>Comparativa de participación: 2022, 2024 y objetivo a futuro</p>
+  <div class="chart-wrapper">
+    <canvas id="votoChart" width="1600" height="600" style="display: block; box-sizing: border-box; height: 600px; width: 1600px;"></canvas>
+  </div>
+</section>
+
+<section id="socialCampaign" class="social-campaign">
+  <div class="container">
+
+    <div class="social-campaign__header text-center">
+      <h2>Voto Digital en redes</h2>
+    </div>
+
+    <div class="social-grid">
+
+      <!-- CARD -->
+      <a href="https://www.instagram.com/p/DRPokXlAAEX/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" 
+         target="_blank" 
+         rel="noopener"
+         class="social-card">
+
+        <div class="social-card__image">
+          <img src="assets/img/redes/post1.png" alt="Voto Digital post 1">
+        </div>
+
+        <div class="social-card__body">
+          <h3>El voto digital es respeto por el tiempo de cada colega.
+            Modernizar el Colegio es defender la abogacía.</h3>
+          <span class="social-card__platform">
+            <i class="bi bi-instagram"></i> Ver en Instagram
+          </span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DRSFYh2AM4V/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" 
+         target="_blank" 
+         rel="noopener"
+         class="social-card">
+
+        <div class="social-card__image">
+          <img src="assets/img/redes/post2.png" alt="Voto Digital post 1">
+        </div>
+
+        <div class="social-card__body">
+          <h3>No se trata solo de tecnología, se trata de justicia.
+            Porque tu tiempo vale, tu voto también.</h3>
+          <span class="social-card__platform">
+            <i class="bi bi-instagram"></i> Ver en Instagram
+          </span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DRXMOfxgMlZ/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" 
+         target="_blank" 
+         rel="noopener"
+         class="social-card">
+
+        <div class="social-card__image">
+          <img src="assets/img/redes/post3.png" alt="Voto Digital post 1">
+        </div>
+
+        <div class="social-card__body">
+          <h3>En 2026 la abogacía necesita dar vuelta el Colegio, dar un giro de 180 grados.</h3>
+          <span class="social-card__platform">
+            <i class="bi bi-instagram"></i> Ver en Instagram
+          </span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DRfcdG5j_94/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" 
+         target="_blank" 
+         rel="noopener"
+         class="social-card">
+
+        <div class="social-card__image">
+          <img src="assets/img/redes/post4.png" alt="Voto Digital post 1">
+        </div>
+
+        <div class="social-card__body">
+          <h3>La abogacía ya trabaja online, firma digitalmente y litiga en internet.</h3>
+          <span class="social-card__platform">
+            <i class="bi bi-instagram"></i> Ver en Instagram
+          </span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DRhaiMnALEB/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" 
+         target="_blank" 
+         rel="noopener"
+         class="social-card">
+
+        <div class="social-card__image">
+          <img src="assets/img/redes/post5.png" alt="Voto Digital post 1">
+        </div>
+
+        <div class="social-card__body">
+          <h3>Quieren que te cueste. Porque si no votás… ganan ellos.</h3>
+          <span class="social-card__platform">
+            <i class="bi bi-instagram"></i> Ver en Instagram
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="shortsCampaign" class="shorts-campaign">
+  <div class="container">
+
+<div class="shorts-campaign__header text-center">
+  <h2>Voto Digital en video</h2>
+</div>
+
+<!-- VIDEOS DESTACADOS -->
+<div class="row g-4 justify-content-center mb-5">
+
+  <!-- VIDEO 1 -->
+  <div class="col-12 col-md-6">
+    <div class="video-card">
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/J-RxjP9PyNk?rel=0"
+          title="Voto Digital - Explicación"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-card__body">
+        <p class="video-card__title">
+          El voto digital puede transformar la participación en el Colegio
+        </p>
+        <div class="video-card__meta">
+          <i class="bi bi-youtube"></i> Ver en YouTube
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO 2 -->
+  <div class="col-12 col-md-6">
+    <div class="video-card">
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/746k6rdsD2Y?rel=0"
+          title="Voto Digital - Colegio Público Digital"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-card__body">
+        <p class="video-card__title">
+          El Colegio Público Digital: una propuesta para modernizar la abogacía
+        </p>
+        <div class="video-card__meta">
+          <i class="bi bi-youtube"></i> Ver en YouTube
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="shortsGrid" class="shorts-grid"></div>
+
+    <div class="shorts-actions">
+      <button id="shortsToggle" class="shorts-btn" type="button">
+        Ver más
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal Shorts -->
+<div class="modal fade" id="shortsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content bg-dark border-0" style="border-radius: 16px; overflow:hidden;">
+      <div class="modal-body p-0 position-relative">
+
+        <button type="button"
+                class="btn btn-sm btn-light position-absolute"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+                style="top:10px; right:10px; z-index:5; border-radius:999px;">
+          Cerrar
+        </button>
+
+        <!-- 9:16 -->
+        <div class="ratio" style="--bs-aspect-ratio: 177.78%;">
+          <iframe id="shortsFrame"
+                  src=""
+                  title="Short"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta aos-init" data-aos="fade-up">
+  <h3>Sumate al<br>Colegio Público Digital</h3>
+  <p>Transformemos juntos la manera en que decidimos el futuro del Colegio.</p>
+  <a href="assets/docs/proyectovotoeada.pdf" target="_blank">Conocé nuestro proyecto de ley</a>
+  <a href="https://espacioabierto.ar/#contact" target="_blank">¡Sumate a participar!</a>
+</section>
+
+<footer>
+  <h5>Conocé TODAS nuestras propuestas</h5>
+  <div class="social-icons">
+    <a href="https://x.com/eada_ok" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.facebook.com/eadaok/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.instagram.com/eada_ok" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.tiktok.com/@eada_ok" target="_blank" aria-label="Tiktok"><i class="bi bi-tiktok"></i></a>
+    <a href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" aria-label="<YouTube"><i class="bi bi-youtube"></i></a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const ctx = document.getElementById('votoChart').getContext('2d');
+  const finalData = [18, 16.6, 55];
+  const votoChart = new Chart(ctx, {
+   type: 'bar',
+  data: {
+    labels: ['2022', '2024', 'Proyección Voto Digital'],
+    datasets: [{
+      data: [0, 0, 0],
+      backgroundColor: ['#ff4ecd', '#ff4ecd', '#ff4ecd'], // magenta vibrante
+      borderRadius: 12
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        enabled: true,
+        backgroundColor: '#fff',
+        titleColor: '#6a1b9a',
+        bodyColor: '#333'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
+        grid: { color: 'rgba(255,255,255,0.2)' }, // líneas claras
+        ticks: {
+          color: '#fff',
+          callback: v => v + '%',
+          font: { weight: 'bold' }
+        }
+      },
+      x: {
+        grid: { display: false },
+        ticks: {
+          color: '#fff',
+          font: { weight: 'bold' }
+        }
+      }
+    }
+  }
+});
+  gsap.to(votoChart.data.datasets[0].data, {
+    duration: 2, ease: "elastic.out(1, 0.5)", endArray: finalData, onUpdate: () => votoChart.update()
+  });
+  setTimeout(() => {
+    const meta = votoChart.getDatasetMeta(0);
+    const ctx2 = votoChart.ctx;
+    ctx2.save(); ctx2.font = "bold 28px Montserrat"; ctx2.fillStyle = "#333"; ctx2.textAlign = "center";
+    meta.data.forEach((bar, i) => { const val = finalData[i]; const pos = bar.tooltipPosition(); ctx2.fillText(val + "%", pos.x, pos.y - 20); });
+    ctx2.restore();
+  }, 2200);
+
+  // Swiper init
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    slidesPerView: 3, spaceBetween: 30,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 992: { slidesPerView: 3 } }
+  });
+
+  
+</script>
+
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<script>
+(() => {
+  const section = document.getElementById("appleQuotes");
+  if (!section) return;
+
+  const lines = [...section.querySelectorAll(".aq__line")];
+  const bar = document.getElementById("aqBar");
+
+  const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+
+  function progressInSection() {
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // total scroll usable dentro de la sección
+    const total = rect.height - vh;
+    const scrolled = -rect.top;
+
+    return clamp(scrolled / total, 0, 1);
+  }
+
+  function setActive(index){
+    lines.forEach((el, i) => el.classList.toggle("aq--active", i === index));
+  }
+
+  function update(){
+    const p = progressInSection();
+
+    // Barra
+    if (bar) bar.style.width = `${Math.round(p * 100)}%`;
+
+    // 4 frases: dividimos el progreso en 4 tramos
+    const n = lines.length;
+    const idx = clamp(Math.floor(p * n), 0, n - 1);
+
+    setActive(idx);
+  }
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+</script>
+
+<script>
+(() => {
+  const grid = document.getElementById("shortsGrid");
+  const toggleBtn = document.getElementById("shortsToggle");
+  const modalEl = document.getElementById("shortsModal");
+  const frame = document.getElementById("shortsFrame");
+
+  if (!grid || !toggleBtn || !modalEl || !frame) return;
+
+  // ✅ Pegá acá tus 24 IDs (de shorts o videos normales)
+  const SHORT_IDS = [
+    "9T7UbeonynA", "jLYODzCk1As", "MJXaq_dP3iI", "kN1IakplV9g", "c5GL771zZMk", "eSbpqmiNzOk", "8O1cITRXyPw", "hJIclJFPXVk", "wmiswHKayHU", "kkuwSZD-IBc", "m3RPuvq33Oc", "zyyQMPfXAm0", "oPe9mefnlps", "y-uvDBiC0q4", "KM_hM9lIETE", "WB9godrpZ9w", "UTQy2GyPCfE", "smYIsX6prqM", "XYGkq0xg_BM", "w_3ZWZymulE", "e0y6BdTwi0M", "SOwvI5YE_Xg", "oJaR1ZRx8hE", "pjdEdjNKKh8"
+  ];
+
+  // Mostrar primero 8, luego todo
+  const FIRST_BATCH = 8;
+  let expanded = false;
+
+  const thumbUrl = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  const watchUrl = (id) => `https://www.youtube.com/watch?v=${id}`;
+
+  async function getTitle(id){
+    // oEmbed: gratis y rápido (puede fallar raro, por eso fallback)
+    const oembed = `https://www.youtube.com/oembed?url=${encodeURIComponent(watchUrl(id))}&format=json`;
+    try{
+      const r = await fetch(oembed);
+      if (!r.ok) return "Ver video";
+      const data = await r.json();
+      return data.title || "Ver video";
+    }catch{
+      return "Ver video";
+    }
+  }
+
+  function openShort(id){
+    // Shorts en embed: funciona con /embed/VIDEO_ID igual
+    frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=0&rel=0`;
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+  }
+
+  function render(){
+    const ids = expanded ? SHORT_IDS : SHORT_IDS.slice(0, FIRST_BATCH);
+
+    grid.innerHTML = ids.map(id => `
+      <article class="short-card" role="button" tabindex="0" data-id="${id}" aria-label="Abrir video">
+        <div class="short-thumb">
+          <img src="${thumbUrl(id)}" alt="Short" loading="lazy">
+          <div class="short-play"><span>▶</span></div>
+        </div>
+        <div class="short-body">
+          <h4 class="short-title">Cargando…</h4>
+          <div class="short-meta">
+            <i class="bi bi-youtube"></i> Reproducir
+          </div>
+        </div>
+      </article>
+    `).join("");
+
+    // Completar títulos
+    const cards = [...grid.querySelectorAll(".short-card")];
+    Promise.allSettled(cards.map(async (card) => {
+      const id = card.dataset.id;
+      const title = await getTitle(id);
+      card.querySelector(".short-title").textContent = title;
+      card.querySelector("img").alt = title;
+      card.setAttribute("aria-label", "Abrir " + title);
+    }));
+  }
+
+  // Eventos abrir
+  grid.addEventListener("click", (e) => {
+    const card = e.target.closest(".short-card");
+    if (!card) return;
+    openShort(card.dataset.id);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target.closest(".short-card");
+    if (!card) return;
+    e.preventDefault();
+    openShort(card.dataset.id);
+  });
+
+  // Toggle ver más
+  toggleBtn.addEventListener("click", () => {
+    expanded = !expanded;
+    toggleBtn.textContent = expanded ? "Ver menos" : "Ver más";
+    render();
+  });
+
+  // Stop video al cerrar modal
+  modalEl.addEventListener("hidden.bs.modal", () => {
+    frame.src = "";
+  });
+
+  // Init
+  toggleBtn.style.display = SHORT_IDS.length > FIRST_BATCH ? "inline-flex" : "none";
+  render();
+})();
+</script>
+</body>
+</html>

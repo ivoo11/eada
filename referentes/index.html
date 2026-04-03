@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EADA · Carga de referidos</title>
+  <style>
+    :root {
+      --eada-primary: #c73a8c;
+      --eada-primary-dark: #a92f83;
+      --eada-text: #351d35;
+      --eada-text-soft: #6f5570;
+      --eada-border: #e5cde0;
+      --eada-success-bg: #eefaf3;
+      --eada-success-border: #b6e6c6;
+      --eada-success-text: #216a3d;
+      --eada-error-bg: #fff1f5;
+      --eada-error-border: #f3bdd1;
+      --eada-error-text: #8b1f4d;
+      --shadow-main: 0 18px 50px rgba(122, 28, 84, 0.12);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(199,58,140,.18), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(169,47,131,.16), transparent 24%),
+        linear-gradient(180deg, #fcf9fc 0%, #f8f3f8 100%);
+      color: var(--eada-text);
+      font-family: "Metropolis", Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .brand-bar {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .brand-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--eada-primary) 0%, var(--eada-primary-dark) 100%);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(169, 47, 131, 0.18);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .page-loader {
+      text-align: center;
+      padding: 56px 24px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(199,58,140,.12);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-main);
+      color: var(--eada-text);
+    }
+
+    .page-loader strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .page-loader span {
+      color: var(--eada-text-soft);
+      font-size: 14px;
+    }
+
+    .card {
+      display: none;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(199,58,140,.12);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-main);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--eada-text);
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      font-size: 16px;
+      color: var(--eada-text-soft);
+      line-height: 1.45;
+    }
+
+    .referente-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      background: linear-gradient(180deg, #faf4f8 0%, #f6eef5 100%);
+      border: 1px solid var(--eada-border);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      margin-bottom: 22px;
+    }
+
+    .referente-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--eada-text-soft);
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .referente-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--eada-text);
+      word-break: break-word;
+    }
+
+    .actions-top {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 7px;
+      color: var(--eada-text);
+      letter-spacing: 0.01em;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #dfd2dc;
+      border-radius: var(--radius-md);
+      padding: 14px 14px;
+      font-size: 16px;
+      color: var(--eada-text);
+      background: #fff;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .08s ease;
+    }
+
+    input:focus {
+      border-color: var(--eada-primary);
+      box-shadow: 0 0 0 4px rgba(199,58,140,.12);
+    }
+
+    input.error {
+      border-color: #d94484;
+      background: #fff7fa;
+    }
+
+    .field-error {
+      display: none;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #b22361;
+      font-weight: 600;
+    }
+
+    .field-error.show {
+      display: block;
+    }
+
+    .hint {
+      margin-top: 7px;
+      font-size: 12px;
+      color: var(--eada-text-soft);
+      line-height: 1.4;
+    }
+
+    .buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .08s ease, opacity .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--eada-primary) 0%, var(--eada-primary-dark) 100%);
+      color: white;
+      box-shadow: 0 12px 24px rgba(169, 47, 131, 0.22);
+      min-width: 210px;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--eada-primary-dark);
+      border: 1px solid rgba(169, 47, 131, 0.22);
+      box-shadow: 0 8px 18px rgba(169, 47, 131, 0.08);
+    }
+
+    .msg {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      display: none;
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .msg.ok {
+      display: block;
+      background: var(--eada-success-bg);
+      border: 1px solid var(--eada-success-border);
+      color: var(--eada-success-text);
+    }
+
+    .msg.error {
+      display: block;
+      background: var(--eada-error-bg);
+      border: 1px solid var(--eada-error-border);
+      color: var(--eada-error-text);
+    }
+
+    .panel {
+      margin-top: 22px;
+      border: 1px solid var(--eada-border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff 0%, #fcf8fb 100%);
+      overflow: hidden;
+      display: none;
+    }
+
+    .panel.show {
+      display: block;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--eada-border);
+      background: linear-gradient(180deg, #faf1f7 0%, #f7ebf4 100%);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--eada-text);
+    }
+
+    .panel-subtitle {
+      font-size: 13px;
+      color: var(--eada-text-soft);
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding: 12px;
+    }
+
+    .loader {
+      padding: 18px;
+      color: var(--eada-text-soft);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .empty-state {
+      padding: 18px;
+      text-align: center;
+      color: var(--eada-text-soft);
+      font-weight: 700;
+    }
+
+    .referidos-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .referido-item {
+      background: white;
+      border: 1px solid #edd8e7;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 8px 18px rgba(169, 47, 131, 0.05);
+    }
+
+    .referido-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .referido-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--eada-text);
+      margin: 0;
+    }
+
+    .referido-status {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #f7ecf4;
+      color: var(--eada-primary-dark);
+      border: 1px solid #eacfe0;
+    }
+
+    .referido-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      font-size: 13px;
+      color: var(--eada-text-soft);
+    }
+
+    .referido-meta strong {
+      color: var(--eada-text);
+    }
+
+    .badge-dup {
+      margin-top: 10px;
+      display: inline-block;
+      background: #fff0f5;
+      color: #a3245f;
+      border: 1px solid #efbfd4;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 14px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons-row,
+      .actions-top {
+        flex-direction: column;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .referido-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 390px) {
+      body {
+        padding: 12px;
+      }
+
+      .wrap {
+        max-width: 100%;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 26px;
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .referente-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+      }
+
+      .actions-top {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .buttons-row {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-header {
+        text-align: center;
+        align-items: center;
+      }
+
+      .referido-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .referido-status {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand-bar">
+      <div class="brand-chip">EADA · Espacio Abierto de la Abogacía</div>
+    </div>
+
+    <div id="pageLoader" class="page-loader">
+      <strong>Validando enlace...</strong>
+      <span>Estamos verificando que el acceso sea correcto.</span>
+    </div>
+
+    <div class="card" id="mainCard">
+      <h1>Carga de referidos</h1>
+      <p class="subtitle">
+        Completá los datos para verificar si la persona figura en el padrón y registrar el referido de forma segura.
+      </p>
+
+      <div class="referente-box">
+        <div>
+          <span class="referente-label">¡Hola!</span>
+          <div id="referenteLabel" class="referente-value">No identificado</div>
+        </div>
+      </div>
+
+      <div class="actions-top">
+        <button type="button" class="btn btn-secondary" id="toggleReferidosBtn">
+          Ver mis referidos
+        </button>
+      </div>
+
+      <div id="referidosPanel" class="panel">
+        <div class="panel-header">
+          <div>
+            <h3 class="panel-title">Mis referidos cargados</h3>
+            <div class="panel-subtitle">
+              Total: <span id="referidosCount">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div id="referidosLoader" class="loader" style="display:none;">Cargando referidos...</div>
+          <div id="referidosEmpty" class="empty-state" style="display:none;">Todavía no hay referidos cargados.</div>
+          <ul id="referidosList" class="referidos-list"></ul>
+        </div>
+      </div>
+
+      <form id="referidoForm" novalidate>
+        <div class="grid-2">
+          <div class="field">
+            <label for="tomo">TOMO</label>
+            <input type="text" id="tomo" name="tomo" inputmode="numeric" />
+            <div id="tomoError" class="field-error">El tomo debe contener solo números.</div>
+          </div>
+
+          <div class="field">
+            <label for="folio">FOLIO</label>
+            <input type="text" id="folio" name="folio" inputmode="numeric" />
+            <div id="folioError" class="field-error">El folio debe contener solo números.</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="documento">DOCUMENTO</label>
+          <input type="text" id="documento" name="documento" inputmode="numeric" />
+          <div class="hint">Podés escribirlo con o sin puntos. Se valida y se normaliza automáticamente.</div>
+          <div id="documentoError" class="field-error">Ingresá un documento válido.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="apellido">APELLIDO</label>
+            <input type="text" id="apellido" name="apellido" />
+            <div id="apellidoError" class="field-error">Ingresá un apellido válido.</div>
+          </div>
+
+          <div class="field">
+            <label for="nombre">NOMBRE</label>
+            <input type="text" id="nombre" name="nombre" />
+            <div id="nombreError" class="field-error">Ingresá un nombre válido.</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mail">MAIL</label>
+          <input type="email" id="mail" name="mail" />
+          <div id="mailError" class="field-error">Ingresá un mail válido.</div>
+        </div>
+
+        <div class="buttons-row">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Guardar referido</button>
+        </div>
+      </form>
+
+      <div id="message" class="msg"></div>
+    </div>
+  </div>
+
+  <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzecn_tmxb3QjoYgx63d9FYkNB6jX0QmR8iqr1sSpA5neYUgNffpg6DYV4XM70Jr5QDzg/exec";
+
+    const form = document.getElementById("referidoForm");
+    const message = document.getElementById("message");
+    const submitBtn = document.getElementById("submitBtn");
+    const referenteLabel = document.getElementById("referenteLabel");
+    const toggleReferidosBtn = document.getElementById("toggleReferidosBtn");
+    const referidosPanel = document.getElementById("referidosPanel");
+    const referidosList = document.getElementById("referidosList");
+    const referidosCount = document.getElementById("referidosCount");
+    const referidosLoader = document.getElementById("referidosLoader");
+    const referidosEmpty = document.getElementById("referidosEmpty");
+    const mainCard = document.getElementById("mainCard");
+    const pageLoader = document.getElementById("pageLoader");
+
+    const tomoInput = document.getElementById("tomo");
+    const folioInput = document.getElementById("folio");
+    const documentoInput = document.getElementById("documento");
+    const apellidoInput = document.getElementById("apellido");
+    const nombreInput = document.getElementById("nombre");
+    const mailInput = document.getElementById("mail");
+
+    const params = new URLSearchParams(window.location.search);
+    const referente = (params.get("ref") || "").trim().toLowerCase();
+    const token = (params.get("token") || "").trim();
+
+    referenteLabel.textContent = referente || "No identificado";
+
+    function soloNumeros(valor) {
+      return String(valor || "").replace(/\D/g, "");
+    }
+
+    function normalizarDocumento(valor) {
+      const solo = soloNumeros(valor);
+      if (!solo) return "";
+      return solo.padStart(8, "0");
+    }
+
+    function isEmailValido(valor) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor);
+    }
+
+    function setFieldError(input, errorId, show, text) {
+      const errorEl = document.getElementById(errorId);
+      input.classList.toggle("error", show);
+      errorEl.classList.toggle("show", show);
+      if (text) errorEl.textContent = text;
+    }
+
+    function limpiarErrores() {
+      setFieldError(tomoInput, "tomoError", false);
+      setFieldError(folioInput, "folioError", false);
+      setFieldError(documentoInput, "documentoError", false);
+      setFieldError(apellidoInput, "apellidoError", false);
+      setFieldError(nombreInput, "nombreError", false);
+      setFieldError(mailInput, "mailError", false);
+    }
+
+    function showMessage(text, type) {
+      message.textContent = text;
+      message.className = "msg " + type;
+    }
+
+    function bloquearNoNumericos(input) {
+      input.addEventListener("input", () => {
+        input.value = input.value.replace(/[^\d]/g, "");
+      });
+    }
+
+    function validarFormulario() {
+      limpiarErrores();
+      let ok = true;
+
+      const tomo = tomoInput.value.trim();
+      const folio = folioInput.value.trim();
+      const documento = normalizarDocumento(documentoInput.value.trim());
+      const apellido = apellidoInput.value.trim();
+      const nombre = nombreInput.value.trim();
+      const mail = mailInput.value.trim();
+
+      if (!tomo || !/^\d+$/.test(tomo)) {
+        setFieldError(tomoInput, "tomoError", true, "El tomo debe contener solo números.");
+        ok = false;
+      }
+
+      if (!folio || !/^\d+$/.test(folio)) {
+        setFieldError(folioInput, "folioError", true, "El folio debe contener solo números.");
+        ok = false;
+      }
+
+      if (!documento || !/^\d{8}$/.test(documento)) {
+        setFieldError(documentoInput, "documentoError", true, "El documento debe quedar en 8 dígitos al normalizarse.");
+        ok = false;
+      }
+
+      if (!apellido || apellido.length < 2) {
+        setFieldError(apellidoInput, "apellidoError", true, "Ingresá un apellido válido.");
+        ok = false;
+      }
+
+      if (!nombre || nombre.length < 2) {
+        setFieldError(nombreInput, "nombreError", true, "Ingresá un nombre válido.");
+        ok = false;
+      }
+
+      if (!mail || !isEmailValido(mail)) {
+        setFieldError(mailInput, "mailError", true, "Ingresá un mail válido.");
+        ok = false;
+      }
+
+      if (!referente || !token) {
+        showMessage("Link inválido o incompleto. Verificá que el enlace sea el correcto.", "error");
+        ok = false;
+      }
+
+      return ok;
+    }
+
+    function formatFecha(valor) {
+      if (!valor) return "-";
+      const fecha = new Date(valor);
+      if (Number.isNaN(fecha.getTime())) return "-";
+      return fecha.toLocaleString("es-AR");
+    }
+
+    function renderReferidos(data) {
+      referidosList.innerHTML = "";
+      referidosCount.textContent = data.total || 0;
+
+      if (!data.referidos || data.referidos.length === 0) {
+        referidosEmpty.style.display = "block";
+        return;
+      }
+
+      referidosEmpty.style.display = "none";
+
+      data.referidos.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "referido-item";
+
+        const tieneDuplicado = String(item.duplicados || "").toUpperCase() === "DUPLICADO";
+        const observaciones = item.observaciones ? String(item.observaciones) : "";
+
+        li.innerHTML = `
+          <div class="referido-top">
+            <div>
+              <p class="referido-name">${escapeHtml(item.apellido || "")} ${escapeHtml(item.nombre || "")}</p>
+            </div>
+            <div class="referido-status">${escapeHtml(item.estado_padron || "SIN ESTADO")}</div>
+          </div>
+
+          <div class="referido-meta">
+            <div><strong>Documento:</strong> ${escapeHtml(item.dni_normalizado || item.documento || "-")}</div>
+            <div><strong>Tomo / Folio:</strong> ${escapeHtml(item.tomo || "-")} / ${escapeHtml(item.folio || "-")}</div>
+            <div><strong>Mail:</strong> ${escapeHtml(item.mail || "-")}</div>
+            <div><strong>Fecha:</strong> ${escapeHtml(formatFecha(item.fecha))}</div>
+          </div>
+
+          ${tieneDuplicado ? `<div class="badge-dup">Duplicado</div>` : ""}
+          ${observaciones ? `<div class="hint" style="margin-top:10px;"><strong>Observaciones:</strong> ${escapeHtml(observaciones)}</div>` : ""}
+        `;
+
+        referidosList.appendChild(li);
+      });
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function cargarMisReferidos() {
+      if (!referente || !token) return;
+
+      referidosLoader.style.display = "block";
+      referidosEmpty.style.display = "none";
+      referidosList.innerHTML = "";
+
+      try {
+        const res = await fetch(
+          `${APPS_SCRIPT_URL}?accion=listar&ref=${encodeURIComponent(referente)}&token=${encodeURIComponent(token)}`
+        );
+        const data = await res.json();
+
+        if (!data.ok) {
+          throw new Error(data.message || "No se pudieron cargar los referidos.");
+        }
+
+        renderReferidos(data);
+
+      } catch (error) {
+        referidosList.innerHTML = "";
+        referidosEmpty.style.display = "block";
+        referidosEmpty.textContent = error.message || "No se pudieron cargar los referidos.";
+      } finally {
+        referidosLoader.style.display = "none";
+      }
+    }
+
+    async function validarLinkAlCargar() {
+      if (!referente || !token) {
+        bloquearPantalla("Link inválido o incompleto.");
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          `${APPS_SCRIPT_URL}?accion=validar_link&ref=${encodeURIComponent(referente)}&token=${encodeURIComponent(token)}`
+        );
+
+        const data = await res.json();
+
+        if (!data.ok) {
+          bloquearPantalla(data.message || "Link inválido o no autorizado.");
+          return;
+        }
+
+        pageLoader.style.display = "none";
+        mainCard.style.display = "block";
+
+      } catch (error) {
+        bloquearPantalla("No se pudo validar el enlace.");
+      }
+    }
+
+    function bloquearPantalla(texto) {
+      pageLoader.innerHTML = `
+        <strong>Acceso no autorizado</strong>
+        <span>${texto}</span>
+      `;
+      mainCard.style.display = "none";
+    }
+
+    bloquearNoNumericos(tomoInput);
+    bloquearNoNumericos(folioInput);
+
+    toggleReferidosBtn.addEventListener("click", async () => {
+      const seMuestra = referidosPanel.classList.toggle("show");
+      toggleReferidosBtn.textContent = seMuestra ? "Ocultar mis referidos" : "Ver mis referidos";
+
+      if (seMuestra) {
+        await cargarMisReferidos();
+      }
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      showMessage("", "");
+      limpiarErrores();
+
+      if (!validarFormulario()) return;
+
+      submitBtn.disabled = true;
+
+      const payload = {
+        referente,
+        token,
+        tomo: tomoInput.value.trim(),
+        folio: folioInput.value.trim(),
+        documento: documentoInput.value.trim(),
+        apellido: apellidoInput.value.trim(),
+        nombre: nombreInput.value.trim(),
+        mail: mailInput.value.trim()
+      };
+
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (!data.ok) {
+          throw new Error(data.message || "No se pudo guardar.");
+        }
+
+        showMessage(data.message, "ok");
+        form.reset();
+
+        if (referidosPanel.classList.contains("show")) {
+          await cargarMisReferidos();
+        }
+
+      } catch (error) {
+        showMessage(error.message || "Ocurrió un error al enviar el formulario.", "error");
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    validarLinkAlCargar();
+  </script>
+</body>
+</html>

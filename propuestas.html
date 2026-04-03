@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EADA | 5 años del mismo lado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f4f1f7;
+      --bg-soft:#fbf9fd;
+      --ink:#17141c;
+      --muted:#5e5568;
+      --purple:#763584;
+      --purple-2:#8d46a0;
+      --purple-3:#a46bb2;
+      --white:#ffffff;
+      --shadow:0 18px 50px rgba(55, 24, 66, .16);
+      --radius:28px;
+      --radius-sm:18px;
+      --max:1180px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:"Montserrat", sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(calc(100% - 28px), var(--max));
+      margin:0 auto;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      background:
+        linear-gradient(180deg, rgba(118,53,132,.95) 0%, rgba(118,53,132,.68) 22%, rgba(17,10,22,.01) 100%),
+        var(--bg);
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(164,107,178,.30), transparent 42%),
+        linear-gradient(180deg, rgba(118,53,132,.10), transparent 38%);
+      pointer-events:none;
+    }
+
+    .hero-wrap{
+      position:relative;
+      z-index:2;
+      padding:24px 0 54px;
+    }
+
+    .hero-top{
+      display:flex;
+      justify-content:center;
+      margin-bottom:22px;
+    }
+
+    .hero-logo{
+      width:min(300px, 44vw);
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,.10));
+    }
+
+    .hero-poster{
+      position:relative;
+      border-radius:34px;
+      overflow:hidden;
+      background:#ddd;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-poster::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(118,53,132,.52) 0%, rgba(118,53,132,.32) 28%, rgba(0,0,0,0) 56%),
+        linear-gradient(0deg, rgba(0,0,0,.14), rgba(0,0,0,0));
+      pointer-events:none;
+    }
+
+    .hero-photo{
+      width:100%;
+      aspect-ratio: 4 / 5.15;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:center;
+      padding:26px 16px 18px;
+      text-align:center;
+      z-index:2;
+    }
+
+    .hero-title{
+      margin-top:20px;
+      color:#fff;
+      font-size:clamp(2.15rem, 7.8vw, 5.5rem);
+      line-height:.92;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+      text-shadow:0 10px 25px rgba(0,0,0,.18);
+      max-width:12ch;
+    }
+
+    .hero-title-line{
+      display:block;
+    }
+
+    .hero-band{
+    position:absolute;
+    bottom:6%;
+    left:50%;
+    transform:translateX(-50%);
+    
+    background:rgba(118,53,132,.95);
+    color:#fff;
+    padding:16px 18px;
+    
+    font-size:clamp(1.3rem, 5.5vw, 3.5rem);
+    font-weight:900;
+    text-transform:uppercase;
+    
+    box-shadow:0 20px 35px rgba(56,20,69,.22);
+    
+    max-width:90%;
+    }
+
+    .hero-band span{
+      display:block;
+    }
+
+    .hero-floating{
+      position:relative;
+      z-index:3;
+      margin:-16px auto 0;
+      width:min(calc(100% - 24px), 980px);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .floating-card{
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(118,53,132,.12);
+      border-radius:24px;
+      padding:18px 18px 20px;
+      box-shadow:0 20px 45px rgba(64, 22, 79, .12);
+    }
+
+    .floating-card h2{
+      margin:0 0 10px;
+      font-size:1.05rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--purple);
+      font-weight:900;
+    }
+
+    .floating-card p{
+      margin:0;
+      font-size:.98rem;
+      line-height:1.55;
+      color:var(--ink);
+      font-weight:600;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:74px 0;
+    }
+
+    .section--tight{
+      padding-top:52px;
+    }
+
+    .section-title{
+      max-width:860px;
+      margin:0 auto 30px;
+      text-align:center;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:1.76rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--purple);
+    }
+
+    .section-title h3{
+      margin:0 0 12px;
+      font-size:clamp(1.8rem, 5vw, 3.2rem);
+      line-height:1.02;
+      font-weight:900;
+      letter-spacing:-.04em;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0 auto;
+      max-width:68ch;
+      font-size:1.3rem;
+      line-height:1.65;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* PROPOSALS */
+    .proposal-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    .proposal-card{
+      background:var(--bg-soft);
+      border:1px solid rgba(118,53,132,.10);
+      border-radius:24px;
+      padding:22px 18px;
+      box-shadow:0 10px 24px rgba(67, 30, 82, .06);
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+
+    .proposal-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 34px rgba(67, 30, 82, .12);
+    }
+
+    .proposal-number{
+      display:inline-flex;
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, var(--purple), var(--purple-2));
+      color:#fff;
+      font-size:.9rem;
+      font-weight:900;
+      margin-bottom:14px;
+      box-shadow:0 12px 22px rgba(118,53,132,.24);
+    }
+
+    .proposal-card h4{
+      margin:0 0 10px;
+      font-size:1.1rem;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:-.02em;
+      color:var(--ink);
+    }
+
+    .proposal-card p{
+      margin:0;
+      font-size:.96rem;
+      line-height:1.6;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* BLOCK MESSAGE */
+    .impact-block{
+      background:linear-gradient(135deg, var(--purple), var(--purple-2));
+      color:#fff;
+      border-radius:34px;
+      padding:34px 22px;
+      box-shadow:0 24px 50px rgba(118,53,132,.22);
+      text-align:center;
+    }
+
+    .impact-block h3{
+      margin:0 0 14px;
+      font-size:clamp(1.9rem, 6.2vw, 4rem);
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-.05em;
+      text-transform:uppercase;
+      text-wrap:balance;
+    }
+
+    .impact-block p{
+      margin:0 auto;
+      max-width:58ch;
+      color:rgba(255,255,255,.88);
+      font-size:1.3rem;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    /* FINAL CTA */
+    .final-cta{
+      padding:0 0 120px;
+    }
+
+    .final-card{
+      position:relative;
+      overflow:hidden;
+      background:#17131c;
+      color:#fff;
+      border-radius:34px;
+      padding:34px 22px 26px;
+      box-shadow:0 24px 50px rgba(24, 14, 30, .18);
+    }
+
+    .final-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -12% -35% auto;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(164,107,178,.55), transparent 65%);
+      pointer-events:none;
+    }
+
+    .final-card::after{
+      content:"";
+      position:absolute;
+      inset:-30% auto auto -12%;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(118,53,132,.40), transparent 65%);
+      pointer-events:none;
+    }
+
+    .final-inner{
+      position:relative;
+      z-index:2;
+      text-align:center;
+    }
+
+    .final-inner h3{
+      margin:0 0 14px;
+      font-size:clamp(1.95rem, 6vw, 4rem);
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-.05em;
+      text-transform:uppercase;
+    }
+
+    .final-inner p{
+      margin:0 auto 22px;
+      max-width:50ch;
+      color:rgba(255,255,255,.84);
+      font-size:1.3rem;
+      line-height:1.65;
+      font-weight:600;
+    }
+
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:16px 26px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg, var(--purple-3), var(--purple));
+      color:#fff;
+      font-family:inherit;
+      font-size:1.4rem;
+      font-weight:900;
+      letter-spacing:.01em;
+      box-shadow:0 16px 30px rgba(118,53,132,.30);
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+      box-shadow:0 20px 34px rgba(118,53,132,.34);
+    }
+
+    .cta-note{
+      margin-top:14px;
+      font-size:.82rem;
+      color:rgba(255,255,255,.62);
+      font-weight:600;
+    }
+
+    /* STICKY MOBILE CTA */
+    .sticky-cta{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:30;
+      padding:10px 14px calc(10px + var(--safe-bottom));
+      background:linear-gradient(180deg, rgba(244,241,247,0), rgba(244,241,247,.92) 26%, rgba(244,241,247,1) 100%);
+      backdrop-filter:blur(10px);
+    }
+
+    .sticky-cta .cta-btn{
+      width:100%;
+      min-height:58px;
+      font-size:1rem;
+    }
+
+    /* DESKTOP */
+    @media (min-width: 768px){
+        .hero-title{
+            font-size: clamp(6.2rem, 6vw, 6rem);
+        }
+
+        .hero-band{
+            font-size: clamp(2rem, 4vw, 4rem);
+        }
+
+      .hero-wrap{
+        padding:34px 0 70px;
+      }
+
+      .hero-overlay{
+        padding:34px 26px 24px;
+      }
+
+      .hero-band{
+        padding:18px 24px 20px;
+      }
+
+      .hero-floating{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .proposal-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .final-card{
+        padding:48px 34px 34px;
+      }
+    }
+
+    @media (min-width: 1080px){
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-poster{
+        border-radius:38px;
+      }
+
+      .hero-photo{
+        aspect-ratio:16 / 9.6;
+      }
+
+      .hero-overlay{
+        justify-content:flex-start;
+        padding-top:34px;
+      }
+
+      .hero-title{
+        max-width:none;
+      }
+
+      .hero-band{
+        max-width:none;
+      }
+
+      .proposal-grid{
+        grid-template-columns:repeat(3, minmax(0,1fr));
+      }
+
+      .sticky-cta{
+        display:none;
+      }
+    }
+
+    @media (max-width: 390px){
+      .hero-overlay{
+        padding-left:12px;
+        padding-right:12px;
+      }
+
+      .hero-band{
+        width:100%;
+      }
+    }
+
+    .eada-footer{
+  position: relative;
+  padding: 56px 20px 40px;
+  background:
+    linear-gradient(180deg, #5f2b74 0%, #3f1b50 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.eada-footer::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top center, rgba(255,255,255,.08), transparent 45%);
+  pointer-events: none;
+}
+
+.eada-footer__inner{
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eada-footer__brand{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.eada-footer__brand img{
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  opacity: .98;
+}
+
+.eada-footer__text{
+  margin: 0 0 24px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,.88);
+  font-weight: 500;
+}
+
+.eada-footer__social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.eada-footer__social a{
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.eada-footer__social a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.2);
+  border-color: rgba(255,255,255,.22);
+  color: #fff;
+}
+
+.eada-footer__social i{
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.eada-footer__cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #fff;
+  color: #763584;
+  text-decoration: none;
+  font-weight: 800;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.eada-footer__cta:hover{
+  transform: translateY(-2px);
+  background: #e9d7ef;
+  color: #5f2b74;
+}
+
+@media (max-width: 768px){
+  .eada-footer{
+    padding: 48px 16px 32px;
+  }
+
+  .eada-footer__brand img{
+    width: 92px;
+  }
+
+  .eada-footer__text{
+    font-size: .95rem;
+  }
+
+  .eada-footer__social{
+    gap: 12px;
+  }
+
+  .eada-footer__social a{
+    width: 44px;
+    height: 44px;
+  }
+
+  .eada-footer__cta{
+    width: 100%;
+    max-width: 320px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container hero-wrap">
+      <div class="hero-top">
+        <img class="hero-logo" src="assets/img/logo-eada-blanco.png" alt="EADA">
+      </div>
+
+      <div class="hero-poster">
+        <img class="hero-photo" src="assets/img/foto-lista-completa.jpeg" alt="Lista completa EADA">
+
+        <div class="hero-overlay">
+
+          <h1 class="hero-title">
+            <span class="hero-title-line">5 años</span>
+            <span class="hero-title-line">del mismo</span>
+            <span class="hero-title-line">lado</span>
+          </h1>
+
+          <div class="hero-band">
+            <span>Defendiendo</span>
+            <span>la abogacía</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-floating">
+        <div class="floating-card">
+          <h2>Quiénes somos</h2>
+          <p>
+            Somos <strong>el único espacio plural, independiente y comprometido</strong> con una idea simple:
+            poner al Colegio al servicio de quienes ejercen la profesión.
+          </p>
+        </div>
+
+        <div class="floating-card">
+          <h2>Qué proponemos</h2>
+          <p>
+            Un Colegio <strong>moderno, útil y presente</strong>. Menos estructura para la política.
+            Más herramientas, más defensa y más beneficios para la matrícula.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-kicker">Propuestas concretas</span>
+        <h3>No venimos a administrar lo mismo. Venimos a cambiarlo.</h3>
+        <p>
+          Nuestros ideales son los mismos desde el primer día. Hace 5 años trabajamos para que el Colegio vuelva a servir a la abogacía, <strong>no al revés</strong>.
+        </p>
+      </div>
+
+      <div class="proposal-grid">
+
+        <article class="proposal-card">
+          <div class="proposal-number">01</div>
+          <h4>Matrícula en cuotas</h4>
+          <p>
+            Queremos un Colegio que entienda la realidad económica de la profesión y acompañe a cada matriculado dándole la posibilidad de pagar la matrícula en 10 cuotas anuales <strong>CON CUALQUIER TARJETA DE CRÉDITO</strong> (exceptuados Enero y Julio).
+          </p>
+        </article>
+
+        <article class="proposal-card">
+          <div class="proposal-number">02</div>
+          <h4>Colegio Público Seguro</h4>
+          <p>
+            Seguros por responsabilidad profesional (mala praxis), seguros de salud durante la vida profesional, y de retiro para complementar la jubilación.
+          </p>
+        </article>
+
+        <article class="proposal-card">
+          <div class="proposal-number">03</div>
+          <h4>Defensa de honorarios</h4>
+          <p>
+            Los honorarios profesionales tienen carácter alimentario, son el salario que percibimos por nuestro trabajo, <strong>su defensa es la principal obligación</strong> del Colegio Público.
+          </p>
+        </article>
+
+        <article class="proposal-card">
+          <div class="proposal-number">04</div>
+          <h4>Beneficios para la abogacía novel</h4>
+          <p>
+            Menos barreras para empezar. Más apoyo, más acceso y más oportunidades. Mesa de ayuda 24/7 para la abogacía joven. Con atención que acompañe, guíe y asista en las necesidades de cada profesional.
+          </p>
+        </article>
+
+        <article class="proposal-card">
+          <div class="proposal-number">05</div>
+          <h4>Colegio Público Denunciante</h4>
+          <p>
+            Tenemos un proyecto para impulsar ante los Consejos de la Magistratura de CABA y Nación las denuncias por mal desempeño de los magistrados que no respeten la ley.
+          </p>
+        </article>
+
+        <article class="proposal-card">
+          <div class="proposal-number">06</div>
+          <h4>Voto digital</h4>
+          <p>
+            Más participación, menos burocracia. Queremos un Colegio Público Digital para que votar deje de ser una carrera de obstáculos.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="impact-block">
+        <h3>El Colegio Público no puede seguir igual</h3>
+        <p>
+          Nos merecemos una representación que defienda, acompañe y actualice el Colegio Público. Una representación
+          que esté de nuestro lado, de quienes trabajamos todos los días ejerciendo la profesión.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-card">
+        <div class="final-inner">
+          <h3>Sumate al equipo de la abogacía</h3>
+          <p>
+            Conocenos, mirá las propuestas completas y acompañanos a construir un Colegio más útil,
+            más cercano y más comprometido con la abogacía.
+          </p>
+
+          <a class="cta-btn" target="_blank" href="https://forms.gle/ruTzAd77ViTqwGnn8">
+            QUIERO CAMBIAR EL COLEGIO PÚBLICO
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="eada-footer">
+  <div class="eada-footer__inner">
+    <a href="https://espacioabierto.ar" target="_blank" rel="noopener" class="eada-footer__brand">
+      <img src="assets/img/logo-eada-blanco.png" alt="Espacio Abierto de la Abogacía">
+    </a>
+
+    <p class="eada-footer__text">
+      Conocé más propuestas y seguinos en nuestras redes
+    </p>
+
+    <div class="eada-footer__social">
+      <a href="https://espacioabierto.ar" target="_blank" rel="noopener" aria-label="Sitio web">
+        <i class="bi bi-globe2"></i>
+      </a>
+      <a href="https://www.instagram.com/eada_ok" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@eada_ok" target="_blank" rel="noopener" aria-label="TikTok">
+        <i class="bi bi-tiktok"></i>
+      </a>
+      <a href="https://x.com/eada_ok" target="_blank" rel="noopener" aria-label="X">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+      <a href="https://www.facebook.com/eadaok/" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" rel="noopener" aria-label="YouTube">
+        <i class="bi bi-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

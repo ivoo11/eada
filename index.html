@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Espacio Abierto de la Abogacía</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- POPUP tipo "card" -->
+  <div id="entryPopup" class="promo" aria-hidden="true">
+    <div class="promo__backdrop" data-close="true"></div>
+
+    <div class="promo__card" role="dialog" aria-modal="true" aria-label="Voto Digital - CPACF">
+      <button class="promo__close" type="button" aria-label="Cerrar" data-close="true">✕</button>
+
+      <div class="promo__grid">
+        <!-- Columna izquierda (texto) -->
+        <div class="promo__left">
+          <div class="promo__kicker">Espacio Abierto de la Abogacía</div>
+          <h2 class="promo__title">VOTO DIGITAL</h2>
+          <p class="promo__subtitle">
+            Conocé cómo el voto digital transforma la participación y hace más ágil tu elección.<br><br> Vení a votar para que el colegio te sirva.
+          </p>
+
+          <div class="promo__actions">
+            <button id="entryCta" class="promo__btn promo__btn--primary" type="button">
+              VER PROYECTO
+            </button>
+          </div>
+        </div>
+
+        <!-- Columna derecha (imagen) -->
+        <div class="promo__right">
+          <img class="promo__img" src="assets/img/votodigital.png" alt="Voto digital" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL desktop: landing dentro (iframe) -->
+  <div id="promoModal" class="promo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Información Voto Digital">
+    <div class="promo-modal__backdrop" data-close="true"></div>
+
+    <div class="promo-modal__panel" role="document">
+      <button class="promo-modal__close" type="button" aria-label="Cerrar" data-close="true">✕</button>
+      <iframe id="promoFrame" class="promo-modal__frame" src="" title="Landing Voto Digital" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://twitter.com/eada_ok" target="_blank" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/eadaok/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/eada_ok/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@eada_ok" target="_blank" class="tiktok"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+        <div class="logo">
+          <a href="/#">
+            <img src="assets/img/logo.png" alt="Espacio Abierto de la Abogacía" class="img-fluid">
+          </a>
+        </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#header">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about">El Espacio</a></li>
+          <li><a class="nav-link scrollto" href="#timeline">Nuestras Propuestas</a></li>
+          <li><a class="nav-link scrollto" href="#team">El Equipo</a></li>
+          <li><a class="nav-link scrollto" href="#radio">Radio</a></li>
+          <li><a class="nav-link scrollto" href="#medios">Medios</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+<!-- ======= HERO CAROUSEL (MODERNO) ======= -->
+<section id="hero" class="hero">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="false">
+
+    <!-- Indicadores (modernos) -->
+    <div class="carousel-indicators hero-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active hero-slide" style="--bg:url('../img/votofondo.png')">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <div class="hero-text" data-aos="fade-up">
+            <p class="hero-kicker">Propuestas 2026</p>
+            <h2 class="hero-title">VOTO DIGITAL</h2>
+            <a href="votodigital.html" target="_blank" class="btn hero-btn">
+              Conocé más
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item hero-slide" style="--bg:url('../img/radio.jpg')">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <div class="hero-text" data-aos="fade-up">
+            <p class="hero-kicker">Radio Espacio Abierto</p>
+            <h2 class="hero-title">Nuestro programa en YouTube</h2>
+            <a href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" class="btn hero-btn">
+              Mirá todo el contenido
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item hero-slide" style="--bg:url('../img/cta-bg1.jpg')">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <div class="hero-text" data-aos="fade-up">
+            <p class="hero-kicker">Conocé nuestras propuestas</p>
+            <h2 class="hero-title">Transformemos juntos el CPACF</h2>
+            <a href="#timeline" class="btn hero-btn">
+              Ver propuestas
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controles (desktop y mobile, minimal) -->
+    <button class="carousel-control-prev hero-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Anterior">
+      <span class="hero-control-icon" aria-hidden="true">‹</span>
+    </button>
+    <button class="carousel-control-next hero-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Siguiente">
+      <span class="hero-control-icon" aria-hidden="true">›</span>
+    </button>
+
+  </div>
+</section>
+<!-- ======= /HERO CAROUSEL ======= -->
+
+
+  <main id="main">
+
+    <!-- ======= NOSOTROS ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 d-flex align-items-stretch" data-aos="zoom-in">
+            <div class="about-video-inline">
+              <video
+                class="about-inline-video"
+                controls
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster="assets/img/about.jpg"
+              >
+                <source src="assets/video/eada2026.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+              </video>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-6 d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <div class="box-heading" data-aos="fade-up">
+              <h4>El Espacio</h4>
+              <h3>Espacio Abierto de la Abogacía</h3>
+              <p>Somos un espacio integrado por profesionales provenientes de diversos sectores, con ideas muy claras y un único compromiso: poner el Colegio al servicio de cada profesional.<br><br>Somos el <b>ÚNICO ESPACIO PLURAL E INDEPENDIENTE</b>, que representa tus intereses, y no en los de la política partidaria.<br><br>Llegó el momento de transformar la Colegiatura, sumate a ser parte del cambio.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up">
+              <div class="icon"><i class="bx bx-group"></i></div>
+              <h4 class="title"><a>Trabajo En Equipo</a></h4>
+              <p class="description">Somos la única alternativa plural e independiente de los partidos políticos conformada por abogadas y abogados que trabajan en el ámbito público y privado.
+              </p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-brain"></i></div>
+              <h4 class="title"><a>Ideas y propuestas</a></h4>
+              <p class="description">6 propuestas fundamentales de gestión. Vamos a hacer que el Colegio de un giro de 180 grados, poniéndolo de cara a la abogacía y de espalda a los partidos políticos.
+              </p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-check"></i></div>
+              <h4 class="title"><a>Soluciones</a></h4>
+              <p class="description">Queremos un colegio que cumpla con sus finalidades y que no derroche lo recaudado por matrícula, bonos y cuota de inscripción. Queremos un Colegio Público Digital que defienda, beneficie y acompañe a las y los trabajadores del Derecho.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- FIN -->
+
+<!-- ======= TIMELINE / HOJA DE RUTA ======= -->
+<section id="timeline" class="timeline-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Hoja de ruta</h2>
+    </div>
+    <div class="timeline-header text-center reveal">
+      <h2 class="timeline-title">Plan de modernización del Colegio Público de la Abogacía 2026-2028</h2>
+      <p class="timeline-subtitle">
+        Somos los únicos que proponemos el Colegio Público Digital (CPD) para que le sirva, acompañe y defienda a la abogacía.
+      </p>
+    </div>
+
+    <div class="timeline-roadmap" id="timelineRoadmap">
+      <div class="timeline-progress"></div>
+
+      <div class="timeline-item left reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-1" type="button">
+          <span class="timeline-date">SERVIR</span>
+          <h3>Voto Digital</h3>
+          <p>
+            El voto digital le devuelve el poder a la abogacía. Porque tu tiempo vale y tu voto también.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item right reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-2" type="button">
+          <span class="timeline-date">SERVIR</span>
+          <h3>Punto de Inicio Profesional</h3>
+          <p>
+            Mesa de Ayuda Integral para la abogacía joven totalmente digital con atención humana que acompañe, guie y asista a la matricula en su inicio profesional.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item left reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-3" type="button">
+          <span class="timeline-date">ACOMPAÑAR</span>
+          <h3>Colegio Público Seguro</h3>
+          <p>
+            Cobertura de seguros por responsabilidad profesional (mala Praxis), de salud para las contingencias durante el ejercicio profesional y de retiro para complementar de la jubilación.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item right reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-4" type="button">
+          <span class="timeline-date">ACOMPAÑAR</span>
+          <h3>Matrícula y Bonos</h3>
+          <p>
+            Hoy el Colegio Público tiene un presupuesto de un municipio, recauda y gasta los recursos sin que ésto beneficie a la matricula. Estos cambios van a equilibrar la balanza a favor de la abogacía.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item left reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-5" type="button">
+          <span class="timeline-date">ACOMPAÑAR</span>
+          <h3>Créditos y Ayuda Económica</h3>
+          <p>
+            Con la cantidad de recursos que administra el Colegio Público vamos a cuidar a la abogacía, otorgándole créditos y ayuda económica para el ejercicio profesional.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item right reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-6" type="button">
+          <span class="timeline-date">DEFENDER</span>
+          <h3>Portal para la defensa de honorarios</h3>
+          <p>
+            Los honorarios profesionales tienen carácter alimentario, son el salario que percibimos por nuestro trabajo, su defensa es la principal obligación del Colegio Público.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+      <div class="timeline-item left reveal-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-card timeline-trigger" data-modal="modal-7" type="button">
+          <span class="timeline-date">DEFENDER</span>
+          <h3>Colegio Público Denunciante y Litigante</h3>
+          <p>
+            El Colegio Público es el más grande de Argentina y uno de los más grande de América. Impulsaremos ante los Consejos de la Magistratura Nacional y de CABA las denuncias por mal desempeño de los magistrados que no respeten la ley durante los procesos judiciales o en el dictado de sentencias.
+          </p>
+          <span class="timeline-more">Ver propuesta completa</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+    
+    <!-- ======= PROPUESTAS ======= -->
+    <section class="why-us">
+      <div class="container">
+        
+        <div class="section-title" data-aos="zoom-in">
+          <h2>Continuemos avanzando</h2>
+          <!--<h3>6 propuestas <span>fundamentales </span>. Un giro de 180 grados para poner al Colegio Público de cara a la Abogacía y de espalda a los partidos políticos</h3>-->
+        </div>
+
+        <div class="row">
+
+          <div class="section-title-propu" data-aos="zoom-out">
+            <h4>POR UN COLEGIO QUE SIRVA A LA ABOGACÍA</h4>
+            <p>SOMOS EL ÚNICO ESPACIO CON PROPUESTAS IDEADAS EN BENEFICIO DEL PROFESIONAL INDEPENDIENTE. PENSADAS PARA TRANSFORMAR EL COLEGIO EN UN LUGAR QUE LE SIRVA A LA ABOGACÍA, Y NO AL REVÉS.</p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box h-100" data-aos="fade-up">
+              <span>01</span>
+              <h4>VOTO DIGITAL</h4>
+              <p>
+                Sí podemos litigar en forma remota, sí podemos operar con el banco desde el celular, sí podemos hacer compras desde la computadora. También vamos a poder votar en forma digital como lo hace el Colegio Público de Abogados de San Pablo Brasil.
+                Es práctico, votas sin perder tiempo. Inclusivo, toda la abogacía puede votar y democrático, más participación es mayor legitimidad.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>02</span>
+              <h4>FONDO PARA EL DESARROLLO PROFESIONAL</h4>
+              <p>
+                Líneas de crédito para la compra de tecnología, capacitaciones y apertura de estudios jurídicos.
+                <br>
+                Así como existen herramientas financieras para impulsar a las pequeñas empresas, también el Colegio puede acompañar el crecimiento profesional de la abogacía.
+                <br>
+                Con financiamiento accesible para equipamiento, formación y desarrollo de estudios jurídicos, buscamos que cada matriculado pueda invertir en su futuro profesional y ampliar sus oportunidades de trabajo.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>03</span>
+              <h4>KIT DIGITAL PARA LA ABOGACÍA NOBEL</h4>
+              <p>
+                Cuenta de almacenamiento en la nube, acceso a doctrina y jurisprudencia on line, herramientas de gestión; todo en forma gratuita para que puedas comenzar a ejercer.
+                <br>
+                Comenzar a ejercer no debería implicar enfrentar altos costos iniciales.
+                Por eso proponemos un kit digital que garantice el acceso para la abogacía novel, con herramientas tecnológicas esenciales para el trabajo cotidiano. Acceso a información jurídica, almacenamiento en la nube y recursos de gestión para que el inicio profesional sea más simple, moderno y accesible.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box h-100" data-aos="fade-up">
+              <span>04</span>
+              <h4>PLATAFORMA DIGITAL COMERCIAL</h4>
+              <p>
+                Esta plataforma conectará a la abogacía con todos los servicios que son necesarios hoy para poder ejercer, como ser: software legal, marketing jurídico, servicios contables, traducciones públicas, pericias, servicios tecnológicos, entre otros.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>05</span>
+              <h4>BIBLIOTECA JURÍDICA DIGITAL SIN CARGO</h4>
+              <p>
+                Acceso a doctrina, jurisprudencia, revistas jurídicas, bases legislativas y herramientas de investigación jurídicas en forma digital y sin cargo para toda la abogacía con disponibilidad 24 hs. x 7 días x 365 todo el año.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>06</span>
+              <h4>INCUBADORA DE ESTUDIOS JURÍDICOS</h4>
+              <p>
+                Programa de incubación de nuevos estudios jurídicos a partir de mentorías de abogados con mayor experiencia, capacitación en el negocio jurídico y marketing profesional, gestión de estudio jurídico, desarrollo de especialidades y networking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          
+          <div class="section-title-propu mt-5" data-aos="zoom-out">
+            <h4>POR UN COLEGIO QUE ACOMPAÑE A CADA PROFESIONAL</h4>
+            <p>IGUALANDO OPORTUNIDADES, ACOMPAÑANDO A CADA PROFESIONAL EN SUS PROYECTOS Y EN SU FORMACIÓN.</p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box h-100" data-aos="fade-up">
+              <span>01</span>
+              <h4>SEGUROS</h4>
+              <p>
+                La elevada matrícula (+88.000 profesionales), permite que el Colegio Público acuerde bajos aranceles de seguros para accidentes personales y cauciones de cobertura por plus petitio inexcusable.
+                <br>
+                Una matrícula numerosa también puede transformarse en un beneficio concreto para toda la abogacía.
+                Negociando en conjunto, el Colegio puede obtener mejores condiciones y menores costos en seguros profesionales y personales. De esta manera se brinda mayor protección a quienes ejercen la profesión y se reducen gastos que hoy cada profesional debe afrontar individualmente.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>02</span>
+              <h4>RÉGIMEN DE LICENCIA PARA LA ABOGACÍA</h4>
+              <p>
+                Al igual que existen en otras jurisdicciones del país, vamos a impulsar las reformas legales o reglamentarias necesarias para establecer un régimen de licencias especiales ante diversas contingencias de la vida profesional en materia de maternidades, adopción, matrimonio, enfermedades, accidentes, vacaciones, etc. dado que, como profesionales de la abogacía, también somos personas trabajadoras.
+                <br>
+                Creemos necesaria la implementación de un sistema de cuidados que contemple la actividad profesional como parte de las personas que precisan, otorgan y reciben cuidados por medio de recursos, infraestructura y tiempos.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>03</span>
+              <h4>PROTOCOLO CONTRA LA VIOLENCIA</h4>
+              <p>
+                Vamos a propiciar la aprobación de un protocolo de actuación para el tratamiento de situaciones de discriminación, acoso o violencia por razones de género, raza, religión, discapacidad, edad, condición socioeconómica, opinión gremial o política, incluyendo la violencia o discriminación por razones de género en el ejercicio profesional para mujeres, diversidades y disidencias, que permita al Colegio Público, actuar en forma rápida, y efectiva en la asistencia de este tipo de casos.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box h-100" data-aos="fade-up">
+              <span>04</span>
+              <h4>PAGO DE LA MATRÍCULA DE FORMA MENSUAL</h4>
+              <p>
+                Todos los profesionales podrán abonar la matrícula en 10 cuotas mensuales con TARJETAS DE CUALQUIER BANCO. (quedan exceptuados del pago los meses de enero y julio). Hoy más del 69% de la abogacía tiene dificultades económicas, y una forma de ayudarlos es mitigar los gastos que el Colegio Público les genera. Por eso terminamos con el pago de la matrícula en una sola cuota. También vamos a revisar la actualización automática del monto de la matrícula. Además todos los profesionales que pagaron la matrícula en tiempo y forma en los últimos años recibirán una bonificación por cumplimiento en el pago de la próxima matricula.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>05</span>
+              <h4>ELIMINACIÓN TOTAL DE LA CUOTA DE INSCRIPCIÓN</h4>
+              <p>
+                Cada abogado que recién comienza su camino profesional necesita el apoyo del Colegio Público para poder ejercer la profesión, además de capacitarlos, vamos a eliminar el pago obligatorio de 2 matrículas para obtener la credencial. Además, vamos a extender la bonificación de la matrícula a 4 años y durante los 2 siguientes solo abonarán el 50% de su valor. Esta propuesta contempla a todos aquellos profesionales que se matricularon a partir del año 2020.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>06</span>
+              <h4>BONIFICACIÓN DE LA MATRICULA CON 30 AÑOS DE EJERCIO PROFESIONAL</h4>
+              <p>
+                Actualmente se requiere haber cumplido 75 años de edad para ser considerado abogado honorario y haber estado matriculado 25 años, es decir, que un abogado que se matricula a los 30 años debe pagar 45 matrículas para obtener el beneficio. Vamos a proponer que se bonifique el pago de la matricula profesional a todos los profesionales que hayan realizado el pago de matrícula durante 35 años. Sin importar su edad.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>07</span>
+              <h4>CRÉDITOS A TASA 0%</h4>
+              <p>
+                Los problemas económicos son importantes para una gran mayoría de profesionales y el Colegio Público tiene reservas en dólares que puede disponer para ayudar a los matriculados con préstamos para comprar equipamiento para su primer estudio o renovar la tecnología para poder ejercer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>08</span>
+              <h4>LÍNEA DE FINANCIACIÓN DE MATRÍCULAS ADEUDADAS</h4>
+              <p>
+                Creación de un fondo de financiación de matrículas adeudadas para las y los profesionales que por la situación económica no puedan abonar en tiempo y forma puedan volver a ejercer la profesión.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>09</span>
+              <h4>FONDO DE AYUDA PARA EL COBRO DE HONORARIOS</h4>
+              <p>
+                Vamos a impulsar un fondo que ayude y acompañe a toda la abogacía en el cobro de los honorarios. Las injustas regulaciones contrarias a la ley de honorarios y la demora en la apelación y su posterior cobro requieren de un Colegio Público que cuide de sus matriculados. Adelanto de honorarios regulados y un fondo compensador de intereses devengados por la demora en el libramiento de giros judiciales son posibles con los recursos del Colegio Público.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          
+          <div class="section-title-propu mt-5" data-aos="zoom-out">
+            <h4>POR UN COLEGIO QUE DEFIENDA LA MATRÍCULA</h4>
+            <p>POR UN COLEGIO PÚBLICO DENUNCIANTE Y LITIGANTE ANTE CUALQUIER HECHO QUE ATENTE CONTRA EL PROFESIONAL MATRICULADO.</p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box h-100" data-aos="fade-up">
+              <span>01</span>
+              <h4>PORTAL CONTRA LAS ARBITRARIEDADES DE LOS ORGANISMOS PÚBLICOS</h4>
+              <p>
+                El art. 5 de la ley 23.187 establece que los abogados en el ejercicio profesional son equiparados a los magistrados y se les debe la mayor consideración y respeto de parte de los funcionarios de los organismos públicos. El Colegio va a actuar judicial o administrativamente ante cualquier organismo público que no cumpla con lo establecido en la ley.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>02</span>
+              <h4>DEFENSA DE LAS INCUMBENCIAS PROFESIONALES</h4>
+              <p>
+                La abogacía permanentemente recibe ataques de diferentes sectores profesionales que intentan quitarnos incumbencias y así limitar nuestro campo laboral, además, muchos políticos y empresarios atacan y denostan la profesión. Nuestra respuesta será categórica e inequívoca en defensa de nuestras incumbencias y en el respeto a la profesión que defiende el estado de derecho y la democracia.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box h-100" data-aos="fade-up" data-aos-delay="100">
+              <span>03</span>
+              <h4>INTELIGENCIA ARTIFICIAL</h4>
+              <p>
+                El avance de la Inteligencia Artificial en todos los campos de la vida diaria es una realidad que no se puede soslayar. La abogacía está hoy en riesgo si no se reglamenta y transforma esta herramienta tecnológica en una aliada de todos los matriculados y no en una amenaza al ejercicio profesional. Lo único que nunca va a poder reemplazar la IA es la relación personalísima entre cada abogado y las personas que representamos.
+              </p>
+            </div>
+          </div>
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>SUMATE!</h3>
+          <p> Te esperamos para formar parte del cambio en el CPACF.<br>Completá el formulario y unite al ÚNICO ESPACIO INDEPENDIENTE que trabaja por los beneficios del profesional, y no de la política partidaria.</p>
+          <a class="cta-btn nav-link scrollto" href="#contact">SUMATE A EADA</a>
+        </div>
+
+      </div>
+    </section><!-- Fin Cta Section -->
+
+    <!-- ======= EQUIPO ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title-team" data-aos="zoom-in">
+          <h2>El Equipo</h2>
+          <p>Somos profesionales provenientes de diversos sectores con ideas muy claras y un único compromiso:<br>Poner el Colegio al servicio de cada abogado y abogada.</p>
+        </div>
+
+        <div class="row">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up">
+                <div class="member-img">
+                  <img src="assets/img/team/ramos.JPG" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href="https://x.com/rubenramosok" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.facebook.com/rubenramosok" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/rubenramosok" target="_blank"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Rubén Ramos</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/pitiot.JPG" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/CarlabPitiot" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/carlabpitiot" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/carlabpitiot" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Carla Pitiot</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="assets/img/team/saez.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/sebajsaez" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com/sebajsaez" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sebastian Saez</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="assets/img/team/sosa.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/sosa_fabi" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/fabiana.sosa.142?mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/fabiana.sosa" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Fabiana Sosa</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/dellepiane.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Cristian Dellepiane</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/lobo.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>María Angélica Lobo</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/santangelo.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Matías Santangelo</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/fojo.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/sandrafojo1" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/sandra.fojo" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/sandrafojo" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sandra Fojo</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/piasek.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/leonpiasek" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/leondario.piasekx" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/leondariopiasek" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>León Piasek</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/ayala.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/ValeriaAyalaTW" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/valeria.m.ayala" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/valeriaayalaok" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Valeria Ayala</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/sarchi.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/hernanpablo.sarchi" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/hernansarchi" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Hernan Sarchi</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/castroborda.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.instagram.com/vanesacastroborda" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Vanesa Castro Borda</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/pouso.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/fgpouso" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/fgpouso" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/fgpouso" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Fernando G. Pouso</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/heredia.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/claudioheredia" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/claudio.heredia" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/claudioheredia17" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Claudio Heredia</h4>
+              </div>
+            </div>
+          </div>
+         
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/papazian.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/rosanaclaudia.papazian" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/rcpapazian" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Rosana Papazian</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/kalczynski.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/alexiska_" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/kalczynski.alexis" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/alexiskalc" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Alexis Kalczynski</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/santos.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.instagram.com/ale.marce.santos" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Alejandra Santos</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/moran.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/MarianoMoran27" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/mariano.moran.792" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/marianomoran2708" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mariano Moran</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/prubner.JPG" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/lacolocyn" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com/cynthia.r.prubner" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Cynthia Prubner</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/alvarez.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://twitter.com/rodalvaz" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=1426721195&mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/robertodalvarez" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Roberto Álvarez</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/hermo.JPG" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/pilar.gonzalezhermo" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/piligonzalezhermo" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Pilar González Hermo</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/zas.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/ZasErnesto" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.facebook.com/ernesto.zas" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/zasernesto" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Ernesto Zas</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/siciliano.JPG" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://x.com/vitosiciliano" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com/vito.siciliano" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>María Victoria Siciliano</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/fasan.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Nicolas Fasan</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/aguirre.JPG" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/agustinaguirre28" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/agustinaguirre28" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Agustina Aguirre</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- Fin Equipo -->
+
+    <!-- COMISIONES E INSTITUTOS -->
+    <section id="participacion" class="part">
+      <div class="container" data-aos="fade-up">
+        <div class="part__header text-center">
+          <h2>Participación CPACF</h2>
+          <p>Comisiones e Institutos donde colaboran integrantes de nuestro espacio.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="part__tabs" role="tablist" aria-label="Participación CPACF">
+          <button class="part__tab is-active" type="button" data-part-tab="comisiones" role="tab" aria-selected="true">
+            Comisiones
+          </button>
+          <button class="part__tab" type="button" data-part-tab="institutos" role="tab" aria-selected="false">
+            Institutos
+          </button>
+        </div>
+
+        <!-- Search -->
+        <div class="part__search">
+          <i class="bi bi-search"></i>
+          <input id="partSearch" type="search" placeholder="Buscar por comisión, instituto o nombre…" autocomplete="off" />
+          <button id="partClear" class="part__clear" type="button" aria-label="Limpiar búsqueda">✕</button>
+        </div>
+
+        <!-- Results meta -->
+        <div class="part__meta">
+          <span id="partCount">0 resultados</span>
+        </div>
+
+        <!-- Accordion container (render dinámico) -->
+        <div id="partAccordion" class="accordion part__accordion"></div>
+
+        <!-- Empty state -->
+        <div id="partEmpty" class="part__empty" hidden>
+          <h3>No encontramos resultados</h3>
+          <p>Probá con otro término (ej: “Laboral”, “Familia”, “Ramos”, “Género”).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RADIO -->
+    <section id="radio" class="radio">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-title">
+          <h2>Radio</h2>
+          <h3>Radio Espacio Abierto</h3>
+          <p>Todos los lunes de 16 a 18hs.</p>
+        </div>
+
+        <div id="radioGrid" class="radio-grid"></div>
+      </div>
+
+        <div class="radio-actions">
+          <a class="radio-channel" href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" rel="noopener">
+            Ir al canal <i class="bi bi-youtube"></i>
+          </a>
+        </div>
+    </section>
+    
+        <!-- Modal reproductor RADIO -->
+    <div class="modal fade" id="radioModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="radioFrame"
+                src=""
+                title="Radio EADA"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <section id="ciclos" class="ciclos">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-title">
+          <h3>Ciclos de Exposiciones</h3>
+          <p>Charlas y encuentros académicos.</p>
+        </div>
+
+        <div id="ciclosGrid" class="ciclos-grid"></div>
+      </div>
+    </section>
+
+    <!-- Modal reproductor CICLOS -->
+    <div class="modal fade" id="ciclosModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe id="ciclosFrame" src="" title="Ciclos EADA" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<section id="medios" class="media-elite">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>MEDIOS</h2>
+      <p>
+        Referentes de <span>EADA</span> en medios nacionales y especializados.
+      </p>
+    </div>
+
+    <!-- LOGOS -->
+    <div class="media-elite__logos">
+      <img src="assets/img/medios/ambito.png" alt="Ámbito">
+      <img src="assets/img/medios/newsweek.png" alt="Newsweek">
+      <img src="assets/img/medios/perfil.png" alt="Perfil">
+      <img src="assets/img/medios/lanacion.png" alt="La Nación">
+      <img src="assets/img/medios/infopba.png" alt="InfoPBA">
+    </div>
+
+    <!-- NOTAS -->
+    <div class="media-elite__grid">
+
+      <a class="media-elite__card" href="https://www.ambito.com/opiniones/derecho-genero-y-trabajo-la-era-milei-n5961412" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/ambito.png" alt="Ámbito">
+        </div>
+        <h4>Derecho, género y trabajo en la Era Milei.</h4>
+        <span class="media-elite__author">Por Fabiana Sosa</span>
+        <span class="media-elite__cta">Leer nota →</span>
+
+      </a>
+
+      <a class="media-elite__card" href="https://www.newsweek.com.ar/opinion/defender-y-hacer-oir-la-voz-de-la-abogacia-en-tiempos-de-enormes-desafios/" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/newsweek.png" alt="Newsweek">
+        </div>
+        <h4>Defender y hacer oír la voz de la abogacía en tiempos de enormes desafíos.</h4>
+        <span class="media-elite__author">Por Rubén Ramos</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+      <a class="media-elite__card" href="https://www.lanacion.com.ar/politica/con-duras-acusaciones-se-lanzo-la-campana-electoral-en-el-colegio-publico-de-la-abogacia-nid01042024/" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/lanacion.png" alt="La Nación">
+        </div>
+        <h4>Con duras acusaciones, se lanzó la campaña electoral en el CPACF.</h4>
+        <span class="media-elite__author">Cobertura política</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+      <a class="media-elite__card" href="https://www.perfil.com/noticias/canal-e/en-un-contundente-fallo-la-justicia-dictamino-el-fin-de-la-doble-imposicion-sindical-a-abogados-estatales.phtml" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/perfil.png" alt="Perfil">
+        </div>
+        <h4>En un contundente fallo, la Justicia dictaminó el fin de la doble imposición sindical a abogados estatales</h4>
+        <span class="media-elite__author">Cobertura Política</span>
+        <span class="media-elite__cta">Leer nota →</span>
+
+      </a>
+
+      <a class="media-elite__card" href="https://www.newsweek.com.ar/politica/-una-corte-sin-mujeres-es-una-corte-sin-justicia-_a6818e4e4b133cc90c07d2506" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/newsweek.png" alt="Newsweek">
+        </div>
+        <h4>Una Corte sin mujeres es una Corte sin justicia.</h4>
+        <span class="media-elite__author">Por Rubén Ramos</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+      <a class="media-elite__card" href="https://www.infopba.com.ar/fernando-pouso-es-importante-que-el-colegio-atienda-las-problematicas-de-las-y-los-abogados-metropolitanos/" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/infopba.png" alt="Info Pba">
+        </div>
+        <h4>Es importante que el Colegio atienda las problemáticas de las y los abogados metropolitanos.</h4>
+        <span class="media-elite__author">Por Fernando Pouso</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+      <a class="media-elite__card" href="https://www.ambito.com/politica/espacio-abierto-presento-su-lista-competir-el-colegio-publico-la-abogacia-capital-federal-n5968682" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/ambito.png" alt="Ámbito">
+        </div>
+        <h4>Espacio Abierto presentó su lista para competir en el Colegio Público de la Abogacía de Capital Federal.</h4>
+        <span class="media-elite__author">Cobertura Política</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+      <a class="media-elite__card" href="https://www.infopba.com.ar/vanesa-castro-borda-necesitamos-una-representacion-colegial-independiente-creativa-que-se-enfrente-al-poder-con-espiritu-de-cuerpo-para-defender-nuestras-incumbencias-profesionales-los-derechos/" target="_blank">
+        <div class="media-elite__logo">
+          <img src="assets/img/medios/infopba.png" alt="Info Pba">
+        </div>
+        <h4>Necesitamos una representación colegial independiente y creativa...</h4>
+        <span class="media-elite__author">Vanesa Castro Borda</span>
+        <span class="media-elite__cta">Leer nota →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- ======= Contacto ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-in">
+          <h2>Contacto</h2>
+          <h3>Querés Formar parte de <span>EADA</span>?</h3>
+          <p>Completá el formulario y nos pondremos en contacto con vos.</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Dirección:</h4>
+                <p>Av. Pte. Julio A. Roca 620 - CABA</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>hola@espacioabierto.com.ar</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            <form action="https://formspree.io/f/xlgprpzz" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Enviando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Tu mensaje fue enviado. Muchas gracias por contactarte con EADA!</div>
+              </div>
+              <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- Fin Contacto -->
+
+  </main><!-- Fin #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>SUSCRIBITE AL NEWSLETTER</h3>
+            <p>Mantenete al tanto de todas las novedades y noticias de EADA.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="formspree.io/f/xlgprpzz" method="post">
+              <input type="email" name="email" placeholder="Ingresá tu mail"><input type="submit" value="Suscribirme al Newsletter">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://twitter.com/eada_ok" target="_blank" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/eadaok/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/eada_ok/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@eada_ok" target="_blank" class="tiktok"><i class="bi bi-tiktok"></i></i></a>
+          <a href="https://www.youtube.com/@RadioEspacioAbierto" target="_blank" class="youtube"><i class="bi bi-youtube"></i></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Espacio Abierto de la Abogacía</span></strong>. Todos los Derechos Reservados
+      </div>
+    </div>
+  </footer><!-- Fin Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Modal Video -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark">
+      <div class="modal-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe id="modal-video" src="" title="Video" allow="autoplay" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= LIVE MODAL (AUTO LUNES) ======= -->
+<div class="modal fade" id="liveModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark border-0">
+
+      <div class="modal-body p-0 position-relative">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center justify-content-between px-3 py-2"
+             style="background:rgba(0,0,0,.65); border-bottom:1px solid rgba(255,255,255,.08);">
+
+          <div class="d-flex align-items-center gap-2 text-white" style="font-weight:800;">
+            <span style="
+              width:10px;
+              height:10px;
+              background:#ff0000;
+              border-radius:50%;
+              display:inline-block;
+              box-shadow:0 0 12px rgba(255,0,0,.7);
+            "></span>
+            EN VIVO — Radio Espacio Abierto
+          </div>
+
+          <button type="button"
+                  class="btn btn-sm btn-light"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar">
+            X
+          </button>
+        </div>
+
+        <!-- Video -->
+        <div class="ratio ratio-16x9">
+          <iframe
+            id="liveFrame"
+            src=""
+            title="Radio Espacio Abierto en vivo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Footer info -->
+        <div class="text-white px-3 py-2"
+             style="font-size:13px; opacity:.85; background:rgba(0,0,0,.65); border-top:1px solid rgba(255,255,255,.08);">
+
+          Si no escuchás audio, tocá el reproductor o activá sonido.
+          Algunos navegadores bloquean autoplay con audio automáticamente.
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= MODALES TIMELINE ======= -->
+<div class="timeline-modal" id="modal-1" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-1">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">SERVIR</span>
+    <h3 id="modal-title-1">Voto Digital</h3>
+    <p>
+      Sí podemos litigar en forma remota, sí podemos operar con el banco desde el celular, sí podemos hacer compras desde la computadora. También vamos a poder votar en forma digital como lo hace el Colegio Público de Abogados de San Pablo Brasil.
+      Es práctico, votas sin perder tiempo. Inclusivo, toda la abogacía puede votar y democrático, más participación es mayor legitimidad.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-2" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-2">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">SERVIR</span>
+    <h3 id="modal-title-2">Punto de Inicio Profesional</h3>
+    <p>
+      Si no sabés dónde presentar cada escrito según el fuero, desconocés cómo iniciar un expediente, tenés dudas sobre proveídos, audiencias y presentaciones digitales, vas a poder consultar cuestiones prácticas de forma inmediata.
+    </p>
+    <p>
+      <strong>Fondo para el desarrollo Profesional:</strong>
+      Líneas de crédito para la compra de tecnología, capacitaciones y apertura de estudios jurídicos.
+    </p>
+    <p>
+      <strong>Kit Digital para la abogacía Nobel:</strong>
+      Cuenta de almacenamiento en la nube, acceso a doctrina y jurisprudencia on line, herramientas de gestión; todo en forma gratuita para que puedas comenzar a ejercer
+    </p>
+    <p>
+      <strong>Plataforma digital comercial:</strong>
+      Esta plataforma conectará a la abogacía con todos los servicios que son necesarios hoy para poder ejercer, como ser: software legal, marketing jurídico, servicios contables, traducciones públicas, pericias, servicios tecnológicos, entre otros.
+    </p>
+    <p>
+      <strong>Biblioteca jurídica digital sin cargo:</strong>
+      Acceso a doctrina, jurisprudencia, revistas jurídicas, bases legislativas y herramientas de investigación jurídicas en forma digital y sin cargo para toda la abogacía con disponibilidad 24 hs. x 7 días x 365 todo el año.
+    </p>
+    <p>
+      <strong>Incubadora de Estudios Jurídicos:</strong>
+      Programa de incubación de nuevos estudios jurídicos a partir de mentorías de abogados con mayor experiencia, capacitación en el negocio jurídico y marketing profesional, gestión de estudio jurídico, desarrollo de especialidades y networking.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-3" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-3">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">ACOMPAÑAR</span>
+    <h3 id="modal-title-3">Colegio Público Seguro</h3>
+    <p>
+      <strong>Seguros:</strong>
+      La elevada matrícula (+88.000 profesionales), permite que el Colegio Público acuerde bajos aranceles de seguros para accidentes personales y cauciones de cobertura por plus petitio inexcusable.
+    </p>
+    <p>
+      <strong>Régimen de licencia para la abogacía.</strong>
+      Al igual que existen en otras jurisdicciones del país, vamos a impulsar las reformas legales o reglamentarias necesarias para establecer un régimen de licencias especiales ante diversas contingencias de la vida profesional en materia de maternidad, adopción, matrimonio, enfermedades, accidentes, vacaciones, entre otros. Ya que como profesionales de la abogacía, también somos personas trabajadoras.
+    </p>
+    <p>
+      <strong>Protocolo contra la Violencia:</strong>
+      Vamos a propiciar la aprobación de un protocolo de actuación para el tratamiento de situaciones de discriminación, acoso o violencia por razones de género, raza, religión, discapacidad, edad, condición socioeconómica, opinión gremial o política, incluyendo la violencia o discriminación por razones de género en el ejercicio profesional para mujeres, diversidades y disidencias, que permita al Colegio Público, actuar en forma rápida, y efectiva en la asistencia de este tipo de casos.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-4" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-4">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">ACOMPAÑAR</span>
+    <h3 id="modal-title-4">Matrícula y Bonos</h3>
+    <p>
+      <strong>Pago de la matrícula en forma mensual:</strong>
+      Todos los profesionales podrán abonar la matrícula en 10 cuotas mensuales con TARJETAS DE CUALQUIER BANCO. (quedan exceptuados del pago los meses de enero y julio). Hoy más del 69% de la abogacía tiene dificultades económicas, y una forma de ayudarlos es mitigar los gastos que el Colegio Público les genera. Por eso terminamos con el pago de la matrícula en una sola cuota. También vamos a revisar la actualización automática del monto de la matrícula. Además todos los profesionales que pagaron la matrícula en tiempo y forma en los últimos años recibirán una bonificación por cumplimiento en el pago de la próxima matricula.
+    </p>
+    <p>
+      <strong>Eliminación total de la cuota de inscripción:</strong>
+      Cada abogado que recién comienza su camino profesional necesita el apoyo del Colegio Público para poder ejercer la profesión, además de capacitarlos, vamos a eliminar el pago obligatorio de 2 matrículas para obtener la credencial. Además, vamos a extender la bonificación de la matrícula a 4 años y durante los 2 siguientes solo abonarán el 50% de su valor. Esta propuesta contempla a todos aquellos profesionales que se matricularon a partir del año 2020.
+    </p>
+    <p>
+      <strong>Bonificación de la matricula si aportaste durante 30 años:</strong>
+      Actualmente se requiere haber cumplido 75 años de edad para ser considerado abogado honorario y haber estado matriculado 25 años, es decir, que un abogado que se matricula a los 30 años debe pagar 45 matrículas para obtener el beneficio. Vamos a proponer que se bonifique el pago de la matricula profesional a todos los profesionales que hayan realizado el pago de matrícula durante 35 años. Sin importar su edad.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-5" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-5">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">DEFENDER</span>
+    <h3 id="modal-title-5">Créditos y Ayuda Económica</h3>
+    <p>
+      <strong>Créditos a tasa 0%:</strong>
+      Los problemas económicos son importantes para una gran mayoría de profesionales y el Colegio Público tiene reservas en dólares que puede disponer para ayudar a los matriculados con préstamos para comprar equipamiento para su primer estudio o renovar la tecnología para poder ejercer.
+    </p>
+    <p>
+      <strong>Prestamos de Honor para posgrados:</strong>
+      La capacitación y actualización son necesarias para poder ejercer la profesión, además de continuar con las que actualmente brinda el Colegio Público, proponemos una línea de créditos académicos que contemple más ramas del derecho y otras instituciones educativas nacionales o internacionales.
+    </p>
+    <p>
+      <strong>Línea de financiación de matrículas adeudadas:</strong>
+      Creación de un fondo de financiación de matrículas adeudadas para las y los profesionales que por la situación económica no puedan abonar en tiempo y forma puedan volver a ejercer la profesión.      
+    </p>
+    <p>
+      <strong>Fondo de ayuda para el cobro de Honorarios:</strong>
+      Vamos a impulsar un fondo que ayude y acompañe a toda la abogacía en el cobro de los honorarios. Las injustas regulaciones contrarias a la ley de honorarios y la demora en la apelación y su posterior cobro requieren de un Colegio Público que cuide de sus matriculados. Adelanto de honorarios regulados y un fondo compensador de intereses devengados por la demora en el libramiento de giros judiciales son posibles con los recursos del Colegio Público.      
+    </p>
+    <p>
+      <strong>Portal de Transparencia:</strong>
+      La ley 104 (CABA) de acceso a la información pública establece todos los abogados tienen derecho a solicitar y a recibir información completa, veraz, adecuada y oportuna. Para ejercer el derecho de acceso a la información pública no será necesario acreditar derecho subjetivo, interés legítimo o razones que motiven la petición.
+      Vamos a crear un portal con toda la información de carácter económico para darle transparencia a la administración de los recursos de toda la abogacía.
+      Invítanos a todos los candidatos a suscribir el compromiso de adherir a la Ley 104 de CABA para lograr un Colegio Público Trasparente.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-6" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-6">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">DEFENDER</span>
+    <h3 id="modal-title-6">Portal para la defensa de honorarios</h3>
+    <p>
+      Si te regulan honorarios a la baja o arbitrarios, sin cumplir la ley, el Colegio Público recibirá la denuncia y te acompañará con el patrocinio gratuito para que se modifique la regulación. Esta asistencia será inmediata y digital, sin burocracia.
+    </p>
+    <p>
+      <strong>Portal de mora judicial:</strong>
+      Hay muchos juzgados vacantes y no cumplen con los plazos, están atrasados, demoran en dictar sentencias, esto desvaloriza nuestros ingresos y los reclamos de las personas a las que representamos. Vamos a crear un registro de los juzgados y tribunales morosos, en el dictado de sentencias, fijación de audiencias, mora en la resolución de las peticiones, con la finalidad de realizar las acciones correspondientes para que actúen dentro de los plazos establecidos por la ley.
+    </p>
+    <p>
+      <strong>Oficina de asistencia para el cobro de honorarios:</strong>
+      Después de muchos años de juicios, tenemos que cobrar los honorarios a los clientes y esto no es fácil, por diferentes razones. Desde el colegio te vamos ayudar a que el cobro de los honorarios deje de ser un problema y puedas percibirlos a la mayor brevedad posible.
+      <br>
+      Derogación del consentimiento de la ley 9.667
+      La ley de 1915 no está prevista para la realidad bancaria de hoy, vamos a proponer que se derogue el consentimiento establecido en el artículo 3 que provoca la demora en el cobro de los honorarios profesionales.
+    </p>
+  </div>
+</div>
+
+<div class="timeline-modal" id="modal-7" aria-hidden="true">
+  <div class="timeline-modal-backdrop" data-close></div>
+  <div class="timeline-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title-6">
+    <button class="timeline-modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+    <span class="timeline-modal-step">DEFENDER</span>
+    <h3 id="modal-title-7">Colegio Público Denunciante y Litigante</h3>
+    <p>
+      El Colegio Público tiene la posibilidad, además, de realizar presentaciones judiciales en calidad de amicus y como observador en las causas en que se detecten irregularidades o arbitrariedades planteadas por las y los matriculados. Iniciaremos todos los pedidos de información que la ley de acceso a la información pública nos permita.
+    </p>
+    <p>
+      <strong>Portal contra las arbitrariedades de los organismos públicos:</strong>
+      El art. 5 de la ley 23.187 establece que los abogados en el ejercicio profesional son equiparados a los magistrados y se les debe la mayor consideración y respeto de parte de los funcionarios de los organismos públicos. El Colegio va a actuar judicial o administrativamente ante cualquier organismo público que no cumpla con lo establecido en la ley.
+    </p>
+    <p>
+      <strong>Defensa de las incumbencias profesionales:</strong>
+      La abogacía permanentemente recibe ataques de diferentes sectores profesionales que intentan quitarnos incumbencias y así limitar nuestro campo laboral, además, muchos políticos y empresarios atacan y denostan la profesión. Nuestra respuesta será categórica e inequívoca en defensa de nuestras incumbencias y en el respeto a la profesión que defiende el estado de derecho y la democracia.
+    </p>
+    <p>
+      <strong>Inteligencia Artificial:</strong>
+      El avance de la Inteligencia Artificial en todos los campos de la vida diaria es una realidad que no se puede soslayar. La abogacía está hoy en riesgo si no se reglamenta y transforma esta herramienta tecnológica en una aliada de todos los matriculados y no en una amenaza al ejercicio profesional. Lo único que nunca va a poder reemplazar la IA es la relación personalísima entre cada abogado y las personas que representamos.      
+    </p>
+  </div>
+</div>
+<!-- ======= FIN LIVE MODAL ======= -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videoModal = document.getElementById("videoModal");
+    const video = document.getElementById("modal-video");
+
+    if (!videoModal || !video) return;
+
+    videoModal.addEventListener("show.bs.modal", function () {
+      video.currentTime = 0;
+      video.play().catch(() => {
+        // algunos navegadores bloquean autoplay con sonido
+      });
+    });
+
+    videoModal.addEventListener("hidden.bs.modal", function () {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+  </script>
+
+<script>
+(() => {
+  const LANDING_URL = new URL("votodigital.html", window.location.href).toString();
+
+  const entry = document.getElementById("entryPopup");
+  const entryCta = document.getElementById("entryCta");
+
+  const modal = document.getElementById("promoModal");
+  const frame = document.getElementById("promoFrame");
+
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+  function openEntry(){
+    entry.classList.add("is-open");
+    entry.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-lock");
+  }
+
+  function closeEntry(){
+    entry.classList.remove("is-open");
+    entry.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-lock");
+  }
+
+  function openModal(){
+    frame.src = LANDING_URL;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-lock");
+  }
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-lock");
+    frame.src = "";
+  }
+
+  // ✅ SIEMPRE al entrar / recargar
+  window.addEventListener("DOMContentLoaded", () => {
+    openEntry();
+  });
+
+  // CTA: desktop modal / mobile nueva pestaña
+  entryCta?.addEventListener("click", () => {
+    closeEntry();
+
+    if (isMobile()) {
+      // gesto del usuario => no lo bloquea el navegador
+      window.open(LANDING_URL, "_blank", "noopener,noreferrer");
+    } else {
+      openModal();
+    }
+  });
+
+  // Cerrar por backdrop/botón
+  entry.addEventListener("click", (e) => {
+    if (e.target?.dataset?.close === "true") closeEntry();
+  });
+
+  // Cerrar modal landing
+  modal.addEventListener("click", (e) => {
+    if (e.target?.dataset?.close === "true") closeModal();
+  });
+
+  // ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (modal.classList.contains("is-open")) closeModal();
+    else if (entry.classList.contains("is-open")) closeEntry();
+  });
+})();
+</script>
+
+<!-- RADIO -->
+ <script>
+(() => {
+  // ✅ Editá esta lista (IDs de YouTube + título)
+  const RADIO_VIDEOS = [
+    { id: "bwJglonCcHQ", title: "Radio Espacio Abierto — Bloque Dra. Angie Lobo" },
+    { id: "7OH-lTQWLT8", title: "Radio Espacio Abierto — Bloque Dr. Sbeastian Saez" },
+    { id: "z_-il3mh_wI", title: "Radio Espacio Abierto — Bloque Lic Rosario Civit y Dr. Ignacio Pardo" },
+    { id: "IyV_C-zMDVw", title: "Radio Espacio Abierto — Bloque Dr. Ignacio Pardo" },
+    { id: "fD5DCNHmv-w", title: "Radio Espacio Abierto — Bloque Dra. Melisa Lubini" },
+    { id: "vXczNEEmee0", title: "Radio Espacio Abierto — Bloque Dr. Rubén Ramos" },
+    { id: "46RCvJfTCt0", title: "Radio Espacio Abierto — Bloque Dra. Fabiana Sosa" },
+    { id: "kgOnqAwinGM", title: "Radio Espacio Abierto — Bloque Dr. Andrés Piesciorovsky" },
+  ];
+
+  const grid = document.getElementById("radioGrid");
+  const modalEl = document.getElementById("radioModal");
+  const frame = document.getElementById("radioFrame");
+
+  if (!grid) return;
+
+  function thumbUrl(id){
+    // hqdefault es estable y liviana
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  }
+
+  function openVideo(id){
+    // autoplay + rel=0 para look más limpio
+    frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+    modal.show();
+  }
+
+  // Render cards
+  grid.innerHTML = RADIO_VIDEOS.map(v => `
+    <article class="radio-card" role="button" tabindex="0" data-video="${v.id}" aria-label="Abrir ${v.title}">
+      <div class="radio-thumb">
+        <img src="${thumbUrl(v.id)}" alt="${v.title}" loading="lazy">
+        <div class="radio-play"><span>▶</span></div>
+      </div>
+      <div class="radio-body">
+        <h4 class="radio-title">${v.title}</h4>
+        <div class="radio-meta">
+          <span class="radio-badge">Radio Espacio Abierto</span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  // Click / keyboard open
+  grid.addEventListener("click", (e) => {
+    const card = e.target.closest(".radio-card");
+    if (!card) return;
+    openVideo(card.dataset.video);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target.closest(".radio-card");
+    if (!card) return;
+    e.preventDefault();
+    openVideo(card.dataset.video);
+  });
+
+  // Stop video when modal closes
+  modalEl?.addEventListener("hidden.bs.modal", () => {
+    frame.src = "";
+  });
+})();
+</script>
+
+<script>
+(() => {
+  // ✅ CICLOS DE EXPOSICIONES
+  const CICLOS_VIDEOS = [
+    { id: "-tU0V-VM4Pk", title: "Dr. Jorge Rohde - Juicios Por Jurados" },
+    { id: "Yag8YLICkG0", title: "Dra. Claudia Barrionuevo — P.R.O.M.E.S.A Procedimiento de Mediación Prejudicial en Materia de Salud" },
+    { id: "gcpAsQUvhNA", title: "Dra. Ariadna Pomponio — Amparos de salud - INTRODUCCIÓN" },
+    { id: "Xpoy9ud1fV0", title: "Dra. Elizabeth Armoa — Evidencia Digital - Conceptos y definiciones – Parte 1 -" },
+    { id: "_Y57PTuqjoM", title: "Dra. Elizabeth Armoa — Evidencia Digital - Conceptos y definiciones – Parte 2 -" },
+    { id: "78Y0Dyy8lng", title: "Dr. Guillermo Ghellinaza — Propiedad Intelectual - Foco introductorio" },
+    { id: "7gLZLCstOcQ", title: "Dr. Marcelo Agorreca — Funciones del Oficial Público del Registro Civil y Capacidadde las Personas" },
+    { id: "cXkEiejc9jo", title: "Dra. Fabiana Sosa — Violencia Laboral" },
+    { id: "3GERXZBoZgU", title: "Dra. María Agustina Karakachoff — Jornada Laboral - Límites y Derechos" },
+    { id: "9hAXgML1FKY", title: "Dr. Hernán Facundo Castro — La Abogacía y la Inteligencia Artificial" },
+  ];
+
+  const grid = document.getElementById("ciclosGrid");
+  const modalEl = document.getElementById("ciclosModal");
+  const frame = document.getElementById("ciclosFrame");
+
+  if (!grid) return;
+
+  function thumbUrl(id){
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  }
+
+  function openVideo(id){
+    frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+  }
+
+  grid.innerHTML = CICLOS_VIDEOS.map(v => `
+    <article class="ciclos-card" role="button" tabindex="0" data-video="${v.id}" aria-label="Abrir ${v.title}">
+      <div class="ciclos-thumb">
+        <img src="${thumbUrl(v.id)}" alt="${v.title}" loading="lazy">
+        <div class="ciclos-play"><span>▶</span></div>
+      </div>
+      <div class="ciclos-body">
+        <h4 class="ciclos-title">${v.title}</h4>
+        <div class="ciclos-meta">
+          <span class="ciclos-badge">Ciclos</span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  grid.addEventListener("click", (e) => {
+    const card = e.target.closest(".ciclos-card");
+    if (!card) return;
+    openVideo(card.dataset.video);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target.closest(".ciclos-card");
+    if (!card) return;
+    e.preventDefault();
+    openVideo(card.dataset.video);
+  });
+
+  modalEl?.addEventListener("hidden.bs.modal", () => {
+    frame.src = "";
+  });
+})();
+</script>
+
+<script>
+(() => {
+
+  /* ==========================
+     RADIO EN VIVO
+  ========================== */
+
+  const FORCE_LIVE_TEST = false; 
+
+  const LIVE_MODE = "channel"; 
+  // "channel" → usa live permanente del canal
+  // "video"   → usa ID manual
+
+  const CHANNEL_ID = "UC5x10p1GydfSJpOdPACPaxg"; 
+  const LIVE_VIDEO_ID = "PEGAR_VIDEO_ID_SI_USAS_VIDEO_MODE";
+
+  const LIVE_DAY = 1; 
+  const START_HOUR = 16, START_MIN = 0;
+  const END_HOUR   = 18, END_MIN   = 0;
+
+  const SESSION_KEY = "eada_live_modal_shown";
+
+  function getEmbedUrl(){
+    if (LIVE_MODE === "channel") {
+      return `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}&autoplay=1&mute=1&rel=0`;
+    } else {
+      return `https://www.youtube.com/embed/${LIVE_VIDEO_ID}?autoplay=1&mute=1&rel=0`;
+    }
+  }
+
+  function nowInArgentina(){
+    const parts = new Intl.DateTimeFormat("es-AR", {
+      timeZone: "America/Argentina/Buenos_Aires",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    }).formatToParts(new Date());
+
+    const get = (type) => parts.find(p => p.type === type)?.value;
+
+    const weekday = (get("weekday") || "").toLowerCase();
+    const hour = parseInt(get("hour"), 10);
+    const minute = parseInt(get("minute"), 10);
+
+    const map = { "dom":0, "lun":1, "mar":2, "mié":3, "mie":3, "jue":4, "vie":5, "sáb":6, "sab":6 };
+    const day = map[weekday] ?? null;
+
+    return { day, hour, minute };
+  }
+
+  function isWithinWindow({day, hour, minute}){
+    if (day !== LIVE_DAY) return false;
+    const nowM = hour * 60 + minute;
+    const startM = START_HOUR * 60 + START_MIN;
+    const endM = END_HOUR * 60 + END_MIN;
+    return nowM >= startM && nowM <= endM;
+  }
+
+  function openLiveModal(){
+    const modalEl = document.getElementById("liveModal");
+    const frame = document.getElementById("liveFrame");
+    if (!modalEl || !frame) return;
+
+    frame.src = getEmbedUrl();
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      frame.src = "";
+    }, { once: true });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+
+    if (sessionStorage.getItem(SESSION_KEY) === "1" && !FORCE_LIVE_TEST) return;
+
+    const t = nowInArgentina();
+    if (!t.day) return;
+
+    if (FORCE_LIVE_TEST || isWithinWindow(t)) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      openLiveModal();
+    }
+
+  });
+
+})();
+</script>
+
+<!-- COMISIONES E INSTITUTOS JS -->
+<script>
+(() => {
+
+  // en person.link poner "#team" o link a un perfil/anchor interno.
+  const PARTICIPACION = {
+    comisiones: [
+      {
+        name: "Comisión de Abogados en Relacion de Dependencia con el Estado y Organismos Públicos",
+        people: [
+          { name: "Dr. Roberto Álvarez", role: "Secretario Adjunto", avatar: "assets/img/team/alvarez.jpg", link: "#team" },
+          { name: "Dr. Pablo Prieto", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Abogados Extranjeros",
+        people: [
+          { name: "Dra. Liz Mailen Cardozo Encarnación", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Tomás Brusco", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Abogados por la Paz y la No Violencia",
+        people: [
+          { name: "Dra. M. Lucrecia García Borre ", role: "Secretaria Adjunta", avatar: "assets/img/team/borre.jpg", link: "#team" },
+          { name: "Dra. Yanina Davila ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Arbitraje Nacional e Internacional",
+        people: [
+          { name: "Dr. Pablo Damian Sainz de Aja ", role: "Integrante", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Asuntos Penitenciarios",
+        people: [
+          { name: "Dr. Diego Martín Duarte ", role: "Secretario Adjunto", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Marcela Rocasalva ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Bioética.",
+        people: [
+          { name: "Dra. Ayelén Caffarena ", role: "Secretaria Adjunta", avatar: "assets/img/team/caffarena.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Conciliación Laboral",
+        people: [
+          { name: "Dra. Claudia Chaar ", role: "Secretaria Adjunta", avatar: "assets/img/team/chaar.jpg", link: "#team" },
+          { name: "Dr. Alejandro Seballes ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Consumo",
+        people: [
+          { name: "Dra. Claudia Barrionuevo ", role: "Secretaria Adjunta", avatar: "assets/img/team/barrionuevo.jpg", link: "#team" },
+          { name: "Dr. Martín Cortese ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Cintia Suarez Cuadro ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Defensa del Abogado y la Abogada",
+        people: [
+          { name: "Dr. Alejandro Agorreca", role: "Secretario Adjunto", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Tomás Brusco", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de los Derechos de la Mujer",
+        people: [
+          { name: "Dra. Fabiana Sosa ", role: "Secretaria Adjunta", avatar: "assets/img/team/sosa.jpg", link: "#team" },
+          { name: "Dra. María Lucrecia García Bourren Ferrero ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derechos de la Niñez y la Adolescencia",
+        people: [
+          { name: "Dra. Ayelén Caffarena ", role: "Miembro Titular", avatar: "assets/img/team/caffarena.jpg", link: "#team" },
+          { name: "Dra. Gabriela Sampere ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Agustina Bueti ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derechos de Personas Mayores",
+        people: [
+          { name: "Dr. Miguel Ángel Di Grazia ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Andrea Coria ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Deportes y recreación",
+        people: [
+          { name: "Dr. Fernando Pouso", role: "Secretario Adjunto", avatar: "assets/img/team/pouso.jpg", link: "#team" },
+          { name: "Dr. Juan Paredes", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Javier Vijandes Pena", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derecho de Faltas y Contravenciones de la Ciudad de Buenos Aires",
+        people: [
+          { name: "Dr. Adrián Cannas", role: "Miembro Titular", avatar: "assets/img/team/cannas.jpg", link: "#team" },
+          { name: "Dr. Emanuel Coronel", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derecho del Mar",
+        people: [
+          { name: "Dr. Nicolás Fasan ", role: "Secretario Adjunto", avatar: "assets/img/team/fasan.jpg", link: "#team" },
+          { name: "Dra. Vanesa Vazquez ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derecho Electoral",
+        people: [
+          { name: "Dra. Valeria Ayala", role: "Secretaria Adjunta", avatar: "assets/img/team/ayala.jpg", link: "#team" },
+          { name: "Dr. Alejandro Seballes", role: "Miembro Titular", avatar: "assets/img/team/seballes.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derechos Humanos",
+        people: [
+          { name: "Dr. Pedro Aiesi", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Facundo Matías Ballester", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derecho y Política de Gestión",
+        people: [
+          { name: "Dra. Vanesa Vazquez", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Ayelén Caffarena", role: "Miembro Titular", avatar: "assets/img/team/caffarena.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Discapacidad",
+        people: [
+          { name: "Dra. Carla Brescia Zavala", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Mariano Gomez", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Derecho de la Diversidad",
+        people: [
+          { name: "Dra. Natalia Gonzalez", role: "Miembro Titular", avatar: "assets/img/team/gonzalez.jpg", link: "#team" },
+          { name: "Dra. Cynthia Romina Prubner", role: "Miembro Titular", avatar: "assets/img/team/prubner.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Honorarios y Aranceles",
+        people: [
+          { name: "Dr. Pablo Daniel Moyano Ilundain", role: "Secretario Adjunto", avatar: "assets/img/team/moyano.jpg", link: "#team" },
+          { name: "Dra. María Sonia Borrajo", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Incumbencias",
+        people: [
+          { name: "Dr. Matías Santangelo ", role: "Miembro Titular", avatar: "assets/img/team/santangelo.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Integridad Financiera y Compliance",
+        people: [
+          { name: "Dr. Fernando Zuberbuhler", role: "Miembro Titular", avatar: "assets/img/team/zuberbuhler.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Juicio Político",
+        people: [
+          { name: "Dra. Carla Brescia Zavala", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Roberto Álvarez", role: "Miembro Titular", avatar: "assets/img/team/alvarez.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Justicia",
+        people: [
+          { name: "Dr. Mariano Morán", role: "Secretario Adjunto", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Juan Mauro Virzi", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de la Abogacía Novel",
+        people: [
+          { name: "Dr. Ignacio Pardo", role: "Secretario Adjunto", avatar: "assets/img/team/pardo.jpg", link: "#team" },
+          { name: "Dr. Tomás Brusco", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Liz Mailen Encarnación Cardozo", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Lautaro Nehuen Pellegrotti", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Padrinazgo - Madrinazgo Profesional",
+        people: [
+          { name: "Dra. Vanesa Castro Borda", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. María Angélica Lobo", role: "Miembro Titular", avatar: "assets/img/team/lobo.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Prestaciones Sociales",
+        people: [
+          { name: "Dr. Victor Arnaldo Ciabattari ", role: "Secretario Adjunto", avatar: "assets/img/team/ciabattari.jpg", link: "#team" },
+          { name: "Dr. Leandro Perez Lerea ", role: "Miembro Titular", avatar: "assets/img/team/perezlerea.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Previsión Social",
+        people: [
+          { name: "Dra. Viviana Graciela Redi ", role: "Secretaria Adjunta", avatar: "assets/img/team/redi.jpg", link: "#team" },
+          { name: "Dra. Leticia Noemí Etchart ", role: "Miembro Titular", avatar: "assets/img/team/etchart.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Relaciones Internacionales e Interprovinciales",
+        people: [
+          { name: "Dra. Cora Remete ", role: "Secretaria Adjunta", avatar: "assets/img/team/remete.jpg", link: "#team" },
+          { name: "Dr. Nicolás Fasan ", role: "Miembro Titular", avatar: "assets/img/team/fasan.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Relaciones Universitarias",
+        people: [
+          { name: "Dr. Rubén Federico Mareco", role: "Secretario Adjunto", avatar: "assets/img/team/mareco.jpg", link: "#team" },
+          { name: "Dra. Cintia Suarez Cuadro", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Seguimiento de la Actividad Judicial",
+        people: [
+          { name: "Dr. Javier Vijandes Pena ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Paulo De La Rosa ", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión de Seguimiento de la Actividad Legislativa",
+        people: [
+          { name: "Dra. Cynthia Prubner", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Federico Luciano Vacchino Rodriguez", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dra. Mariana Alvarez Rodriguez", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+        ]
+      },
+
+      {
+        name: "Comisión Permanente de Enlace con la Comunidad y Organizaciones de la Sociedad Civil",
+        people: [
+          { name: "Dra. Claudia Barrionuevo", role: "Secretaria Adjunta", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+          { name: "Dr. Juan Sebastián Paredes", role: "Miembro Titular", avatar: "assets/img/team/avatar.jpg", link: "#team" },
+
+        ]
+      },
+      
+    ],
+    /*nstitutos: [
+      {
+        name: "Instituto de Derecho Constitucional",
+        people: [
+          { name: "Sebastian Saez", role: "Integrante", avatar: "assets/img/team/saez.jpg", link: "#team" },
+        ]
+      },
+    ]*/
+  };
+
+  const accordion = document.getElementById("partAccordion");
+  const search = document.getElementById("partSearch");
+  const clearBtn = document.getElementById("partClear");
+  const countEl = document.getElementById("partCount");
+  const emptyEl = document.getElementById("partEmpty");
+  const tabButtons = document.querySelectorAll("[data-part-tab]");
+
+  if (!accordion || !search || !countEl || !emptyEl || tabButtons.length === 0) return;
+
+  let activeTab = "comisiones";
+  let query = "";
+
+  const norm = (s) =>
+    (s || "")
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+
+  function matchesItem(item, q){
+    if (!q) return true;
+
+    const hay = [
+      item.name,
+      ...(item.people || []).map(p => p.name),
+      ...(item.people || []).map(p => p.role),
+    ].map(norm).join(" ");
+
+    return hay.includes(q);
+  }
+
+  function personHTML(p){
+    const avatar = p.avatar || "assets/img/favicon.png";
+    const link = p.link || "#";
+    const role = p.role || "Integrante";
+
+    return `
+      <div class="part__person" href="${link}">
+        <img class="part__avatar" src="${avatar}" alt="${p.name}" loading="lazy">
+        <span class="part__personText">
+          <span class="part__personName">${p.name}</span>
+          <span class="part__personRole">${role}</span>
+        </span>
+      </div>
+    `;
+  }
+
+  function render(){
+    const list = (PARTICIPACION[activeTab] || []);
+    const q = norm(query);
+
+    const filtered = list.filter(item => matchesItem(item, q));
+
+    countEl.textContent = `${filtered.length} resultado${filtered.length === 1 ? "" : "s"}`;
+    emptyEl.hidden = filtered.length !== 0;
+
+
+    accordion.innerHTML = filtered.map((item, idx) => {
+      const headingId = `partHeading-${activeTab}-${idx}`;
+      const collapseId = `partCollapse-${activeTab}-${idx}`;
+      const people = item.people || [];
+
+      return `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="${headingId}">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${collapseId}"
+                    aria-expanded="false"
+                    aria-controls="${collapseId}">
+              ${item.name}
+            </button>
+          </h2>
+
+          <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="${headingId}" data-bs-parent="#partAccordion">
+            <div class="accordion-body">
+              <div class="part__people">
+                ${people.length ? people.map(personHTML).join("") : `<span style="color:rgba(0,0,0,.55);font-weight:650;">Sin integrantes cargados</span>`}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeTab = btn.dataset.partTab;
+
+      tabButtons.forEach(b => {
+        const active = b.dataset.partTab === activeTab;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      render();
+    });
+  });
+
+  search.addEventListener("input", () => {
+    query = search.value || "";
+    clearBtn.style.visibility = query ? "visible" : "hidden";
+    render();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    search.value = "";
+    query = "";
+    clearBtn.style.visibility = "hidden";
+    search.focus();
+    render();
+  });
+
+  // Init
+  clearBtn.style.visibility = "hidden";
+  render();
+
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const revealElements = document.querySelectorAll(".reveal");
+  const timelineItems = document.querySelectorAll(".reveal-item");
+  const roadmap = document.getElementById("timelineRoadmap");
+  const progress = roadmap ? roadmap.querySelector(".timeline-progress") : null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        entry.target.classList.add("in-view");
+      }
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: "0px 0px -8% 0px"
+  });
+
+  revealElements.forEach((el) => observer.observe(el));
+  timelineItems.forEach((item) => observer.observe(item));
+
+  function updateTimelineProgress() {
+    if (!roadmap || !progress) return;
+
+    const rect = roadmap.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const start = windowHeight * 0.85;
+    const scrolled = start - rect.top;
+    const max = rect.height;
+    const progressHeight = Math.max(0, Math.min(scrolled, max));
+
+    progress.style.height = progressHeight + "px";
+  }
+
+  updateTimelineProgress();
+  window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+  window.addEventListener("resize", updateTimelineProgress);
+
+  /* ===== MODALES ===== */
+  const triggers = document.querySelectorAll(".timeline-trigger");
+  const modals = document.querySelectorAll(".timeline-modal");
+  let activeModal = null;
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    activeModal = modal;
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    activeModal = null;
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-modal");
+      const targetModal = document.getElementById(targetId);
+      openModal(targetModal);
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.querySelectorAll("[data-close]").forEach((el) => {
+      el.addEventListener("click", () => closeModal(modal));
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeModal) {
+      closeModal(activeModal);
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const revealElements = document.querySelectorAll(".reveal");
+  const timelineItems = document.querySelectorAll(".reveal-item");
+  const roadmap = document.getElementById("timelineRoadmap");
+  const progress = roadmap ? roadmap.querySelector(".timeline-progress") : null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        entry.target.classList.add("in-view");
+      }
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: "0px 0px -8% 0px"
+  });
+
+  revealElements.forEach((el) => observer.observe(el));
+  timelineItems.forEach((item) => observer.observe(item));
+
+  function pulseItem(item) {
+    if (!item || item.dataset.pulsed === "true") return;
+
+    item.dataset.pulsed = "true";
+    item.classList.add("is-pulsing");
+
+    setTimeout(() => {
+      item.classList.remove("is-pulsing");
+    }, 1100);
+  }
+
+  function updateTimelineProgress() {
+    if (!roadmap || !progress) return;
+
+    const roadmapRect = roadmap.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const start = windowHeight * 0.85;
+    const scrolled = start - roadmapRect.top;
+    const max = roadmap.offsetHeight;
+    const progressHeight = Math.max(0, Math.min(scrolled, max));
+
+    progress.style.height = progressHeight + "px";
+
+    timelineItems.forEach((item) => {
+      const dot = item.querySelector(".timeline-dot");
+      if (!dot) return;
+
+      const dotTopWithinRoadmap = item.offsetTop + dot.offsetTop + (dot.offsetHeight / 2);
+
+      if (progressHeight >= dotTopWithinRoadmap) {
+        if (!item.classList.contains("is-reached")) {
+          item.classList.add("is-reached");
+          pulseItem(item);
+        }
+      } else {
+        item.classList.remove("is-reached");
+        item.dataset.pulsed = "false";
+      }
+    });
+  }
+
+  updateTimelineProgress();
+  window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+  window.addEventListener("resize", updateTimelineProgress);
+
+  /* ===== MODALES ===== */
+  const triggers = document.querySelectorAll(".timeline-trigger");
+  const modals = document.querySelectorAll(".timeline-modal");
+  let activeModal = null;
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    activeModal = modal;
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    activeModal = null;
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-modal");
+      const targetModal = document.getElementById(targetId);
+      openModal(targetModal);
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.querySelectorAll("[data-close]").forEach((el) => {
+      el.addEventListener("click", () => closeModal(modal));
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeModal) {
+      closeModal(activeModal);
+    }
+  });
+});
+</script>
+
+</body>
+
+</html>
